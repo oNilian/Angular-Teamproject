@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
+// import { LandingPageComponent } from './navigation/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
     NavigationModule
   ],
   providers: [],

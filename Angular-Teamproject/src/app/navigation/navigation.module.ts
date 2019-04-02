@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  declarations: [
+    LandingPageComponent
+  ],
+  exports: [
+    CommonModule,
+    LandingPageComponent
+    
   ]
 })
 export class NavigationModule { }
