@@ -5,7 +5,7 @@ import {RatinglistModule} from './ratinglist/ratinglist.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -16,3 +16,4 @@ import {RatinglistModule} from './ratinglist/ratinglist.module';
 })
 export class AppModule {
 }
+
