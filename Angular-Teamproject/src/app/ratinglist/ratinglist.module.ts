@@ -1,12 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CompComponent} from './comp/comp.component';
+import {AritcleListComponent} from './aritcle-list/aritcle-list.component';
+import {FormsModule} from '@angular/forms';
+import {WikipediaAPIService} from '../shared/wikipedia-api.service';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [CompComponent],
+  declarations: [AritcleListComponent],
+  imports: [FormsModule, HttpClientModule, BrowserModule],
+  providers: [WikipediaAPIService],
   exports: [
     CommonModule,
-    CompComponent
-  ]
+    AritcleListComponent
+  ],
 })
-export class RatinglistModule {}
+export class RatinglistModule {
+}
