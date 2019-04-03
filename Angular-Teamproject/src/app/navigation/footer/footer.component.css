@@ -1,0 +1,44 @@
+p {
+    margin: 0 0;
+}
+
+hr {
+    align-self: center;
+    width: 80%;
+    height: 3px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+}
+
+.navigationalFooter {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    /* flex-wrap: nowrap; */
+    text-align: center
+}
+
+.firstColumnContainer {
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+}
+
+.secondColumnContainer {
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+}
+
+.thirdColumnContainer {
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+}
+
+.fourthColumnContainer {
+    flex-direction: column;
+    display: flex;
+    flex-basis: 25%;  
+}
