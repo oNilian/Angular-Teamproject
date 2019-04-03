@@ -1,13 +1,7 @@
 p {
-    margin: 0 0;
-}
-
-hr {
-    align-self: center;
-    width: 80%;
-    height: 3px;
-    margin: 0 0 10px 0;
-    background: linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    color:white;
+    margin: 0 0 12.5px 0;
+    font-weight: bold;
 }
 
 .navigationalFooter {
@@ -15,30 +9,67 @@ hr {
     width: 100%;
     flex-direction: row;
     justify-content: center;
-    /* flex-wrap: nowrap; */
-    text-align: center
 }
 
 .firstColumnContainer {
     display: flex;
     flex-basis: 25%;
     flex-direction: column;
+    margin: 0% 2.5%;
 }
 
 .secondColumnContainer {
     display: flex;
     flex-basis: 25%;
     flex-direction: column;
+    margin: 0% 2.5%;
 }
 
 .thirdColumnContainer {
     display: flex;
     flex-basis: 25%;
     flex-direction: column;
+    margin: 0% 2.5%;
 }
 
 .fourthColumnContainer {
     flex-direction: column;
     display: flex;
     flex-basis: 25%;  
+    margin: 0% 2.5%;
+}
+
+.socialMediaContainer {
+    display: flex;
+    flex-basis: 25%;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    margin: 2.5px;
+}
+
+.facebookLogo:hover {
+    cursor: pointer;
+}
+
+.instaLogo:hover {
+    cursor: pointer;
+}
+
+.twitterLogo:hover {
+    cursor: pointer;
+}
+
+span {
+    width: 25%;
+    margin: 1px 0;
+}
+
+span:hover {
+    cursor: pointer;
 }
