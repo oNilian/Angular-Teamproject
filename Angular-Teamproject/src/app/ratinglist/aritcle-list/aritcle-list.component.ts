@@ -9,20 +9,23 @@ import {query} from '@angular/animations';
 })
 export class AritcleListComponent implements OnInit {
   articles: any;
-  URL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=`;
-  queryLink: any;
+  URLEncode: any;
+  link: any;
+  URL: any = `https://en.wikipedia.org/wiki`;
+
 
   constructor(private wikiService: WikipediaAPIService) {
   }
 
   ngOnInit() {
+
   }
+
+// `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=`;
 
   searchWikipedia(q: string) {
     return this.wikiService.getArticle(q).subscribe(wiki => {
-      console.log(this.articles);
-      this.queryLink = q;
-      console.log(this.articles);
+      console.log(this.link);
       this.articles = wiki.query.search;
     });
   }

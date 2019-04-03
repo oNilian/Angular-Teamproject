@@ -1,13 +1,6 @@
 import {Injectable, Input, Output} from '@angular/core';
-import {HttpHeaders, HttpClient} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'conent-type': 'application/json'
-  })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +8,7 @@ const httpOptions = {
 export class WikipediaAPIService {
   private query: string;
   // ${this.srchQuery}
-  URL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=`;
+  URL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=1&srsearch=`;
 
   constructor(private http: HttpClient) {
   }

@@ -2,22 +2,35 @@
   <input class="searchWiki" type="text" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!">
   <button (click)="searchWikipedia(query)">Find Wiki</button>
 </div>
+<main>
+  <section class="search-results">
 
-<div class="result-item">
-  <div *ngFor="let article of articles">
-    <h3 class="resultItem-title">
-      <h1 href="">Titel {{article.title}}</h1>
-    </h3>
+  </section>
+</main>
+   <div class="result-item" *ngFor="let article of articles">
+    <h2  >
+      <a href="{{URL}}/{{article.title}}"  target="_blank"  rel="noopener">{{article.title}}</a>
+    </h2>
     <span class="resultItem-snippet">{{article.snippet}}</span>
+     <!--<a href="{{URL}}/{{article.title}}"  target="_blank" >{{article.title}}</a>-->
 
   </div>
-</div>
-        <!--<span>{{URL}}</span>-->
-        <!--<span>{{queryLink}}</span>-->
-         <!--`<div class="resultItem">-->
-          <!--<h3 class="resultItem-title">-->
-            <!--<a href="${url}" target="_blank" rel="noopener">${result.title}</a>-->
-          <!--</h3>-->
-          <!--<span class="resultItem-snippet">${result.snippet}</span><br>-->
-          <!--<a href="${url}" class="resultItem-link" target="_blank" rel="noopener">${url}</a>-->
-        <!--</div>`-->
+
+<!--`<div class="resultItem">-->
+<!--<h3 class="resultItem-title">-->
+<!--<a href="${url}" target="_blank" rel="noopener">${result.title}</a>-->
+<!--</h3>-->
+<!--<span class="resultItem-snippet">${result.snippet}</span><br>-->
+<!--<a href="${url}" class="resultItem-link" target="_blank" rel="noopener">${url}</a>-->
+<!--</div>`-->
+
+
+
+
+
+
+
+
+
+<!--<span>{{URL}}</span>-->
+<!--<span>{{queryLink}}</span>-->
