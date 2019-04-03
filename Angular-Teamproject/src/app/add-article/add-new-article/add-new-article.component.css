@@ -1,0 +1,36 @@
+.addLinkForm{
+    border: 1px solid gray;
+    width: 500px;
+    margin: auto;
+    background: #E4E2E0;
+    padding: 8px 15px;
+    font-family: sans-serif;
+   }
+   h1{
+    font-family: sans-serif;
+    text-align: center;
+   }
+   
+   input{
+    display: block;
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+   }
+   
+   button{
+    position: relative;
+    top: 15px;
+    float: right;
+    border: none;
+    height: 30px;
+    width: 70px;
+    padding:  3px;
+   }
+   .invalid {
+       border-bottom-color: red;
+   }
+   .valid {
+       border-bottom-color: green;
+   }
