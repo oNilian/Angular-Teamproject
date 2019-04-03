@@ -1,4 +1,14 @@
+
+.heroImageContainer {
+
+}
+
+.userValuesContainer {
+    z-index: 1;
+}
+
 img {
+    z-index: -1;
     display: flex;
     height: auto;
     max-width: 100%;
