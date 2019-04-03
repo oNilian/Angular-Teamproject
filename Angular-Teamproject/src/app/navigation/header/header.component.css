@@ -1,4 +1,58 @@
 .navigationalHeader {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
+    align-items: center;
+}
+
+.wrapNavBar {
+    display: flex;
+    width: 90%; 
+    justify-content: space-evenly;
+    margin: 0 10% 0% 0%;
+}
+
+.wrapLogo {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+}
+
+.navLogo {
+    height: 50px;
+    width: 50px;
+}
+
+.navHomeButton:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.navToplistButton:hover {
+    color: gray;
+    cursor: pointer; 
+}
+
+.navRatingButton:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.navAddArticleButton:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.navAboutUsButton:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.navLogo {
+    transition: all .3s ease-in-out; 
+}
+
+.navLogo:hover {
+    transform: scale(1.35);
+    cursor: pointer;
 }

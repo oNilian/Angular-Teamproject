@@ -4,38 +4,22 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    color: white;
+    color: lightgray;
 }
 
-/* .wrapper > * {
-    padding: 25px;
-} */
-
 .headerContainer {
-    align-items: flex-start;
-    padding: 20px;
+    padding: 10.5px;
     background-color: black;
     opacity: 0.85;
-    /* justify-content: center; */
+    position: fixed;
+    width: 100%;
 }
 
 .mainContainer {
-    background-color: tomato;
     text-align: center;
-    /* flex-grow: 1; */
-    /* width: 75%; */
-    /* object-fit: contain; */
-    align-items: stretch;
 }
-main {
-    max-width: 100%;
-}
-/* img {
-    height: 75%;
-} */
 
 .footerContainer {
     padding: 20px;
-    align-items: flex-end;
     background-color: black;
 }
