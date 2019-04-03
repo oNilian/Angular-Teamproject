@@ -1,3 +1,35 @@
-.heroImageContainer {
-    width: 100px;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* .wrapper > * {
+    padding: 25px;
+} */
+
+.headerContainer {
+    align-items: flex-start;
+    background-color: blue;
+}
+
+.mainContainer {
+    background-color: tomato;
+    text-align: center;
+    /* flex-grow: 1; */
+    /* width: 75%; */
+    /* object-fit: contain; */
+    align-items: stretch;
+}
+main {
+    max-width: 100%;
+}
+/* img {
+    height: 75%;
+} */
+
+.footerContainer {
+    background-color: lightgreen;
+    align-items: flex-end;
 }
