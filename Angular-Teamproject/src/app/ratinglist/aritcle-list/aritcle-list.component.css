@@ -5,28 +5,29 @@
 }
 
 body {
-  background-color:white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .searchForm-container {
   width: 100%;
   height: 100px;
-
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  padding-left: 50px;
+  padding-left: 200px;
 }
 
 .searchForm {
   margin-left: 30px;
   display: flex;
-  background-color: white;
+  background-color: #292929;
+  border: 1px solid #242424;
   border-radius: 4px;
 }
 
 .searchForm-input {
-  background-color: gray;
+  background-color: #292929;
   border: none;
   height: 44px;
   width: 550px;
@@ -65,14 +66,14 @@ body {
   opacity: 0;
   margin-bottom: 20px;
   animation: show 0.5s forwards ease-in-out;
-  color: black;
-  border-radius: 3px;
-  padding: 20px;
+  color: white;
+  border-radius: 2px;
+  padding: 10px;
   width: 100%;
 }
 
 .resultItem:hover {
-  background-color: #a9a8a9;
+  background-color: #434343;
 }
 
 .resultItem-title {
@@ -80,7 +81,6 @@ body {
 }
 
 .resultItem-title a {
-  opacity: 20%;
   color: white;
   text-decoration: none;
 }
@@ -90,7 +90,7 @@ body {
 }
 
 .resultItem-snippet, .resultItem-link {
-  color: black;
+  color: #c2c2c2;
   font-size: 13px;
 }
 
@@ -110,7 +110,7 @@ body {
 @media screen and (max-width: 750px) {
 
   .searchForm-container {
-    padding: 20px 0 20px;
+    padding:0;
     height: auto;
     justify-content: space-between;
     flex-direction: column;
@@ -125,8 +125,9 @@ body {
   }
 
   .searchResults {
-    width: 388px;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0;
   }
 }

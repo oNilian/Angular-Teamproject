@@ -1,21 +1,42 @@
 <div>
-  <input class="searchWiki" type="text" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!">
-  <button (click)="searchWikipedia(query)">Find Wiki</button>
-</div>
-<main>
-  <section class="search-results">
+  <!--<img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">-->
+  <!--<input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!">-->
+  <!--<button (click)="searchWikipedia(query)" class="icon searchIcon"><img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon"></button>-->
 
+  <!---->
+  <main>
+    <header class="searchForm-container">
+      <img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
+      <form class="searchForm">
+        <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!"
+               [ngModelOptions]="{standalone: true}"
+        >
+          <button type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
+            <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
+          </button>
+            <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener" class="icon randomIcon">
+              <img src="https://image.ibb.co/fR5OX5/random.png" alt="Shuffle Icon">
+            </a>
+      </form>
+    </header>
+    <section class="searchResults">
+      <div class="result-item" *ngFor="let article of articles">
+        <h2>{{article.title}}</h2>
+        <h4>{{article.snippet}}</h4>
+
+    </div>
   </section>
-</main>
-   <div class="result-item" *ngFor="let article of articles">
-    <h2  >
-      <a href="{{URL}}/{{article.title}}"  target="_blank"  rel="noopener">{{article.title}}</a>
-    </h2>
-    <span class="resultItem-snippet">{{article.snippet}}</span>
-     <!--<a href="{{URL}}/{{article.title}}"  target="_blank" >{{article.title}}</a>-->
+  </main>
 
-  </div>
 
+
+
+<!--</div>-->
+<!--<main>-->
+  <!--<section class="search-results">-->
+    <!---->
+<!--</section>-->
+<!--</main>-->
 <!--`<div class="resultItem">-->
 <!--<h3 class="resultItem-title">-->
 <!--<a href="${url}" target="_blank" rel="noopener">${result.title}</a>-->
@@ -27,7 +48,23 @@
 
 
 
+<!--<main>-->
 
+  <!--<header class="searchForm-container">-->
+
+    <!--<img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">-->
+
+    <!--<form class="searchForm">-->
+      <!--<input type="search" class="searchForm-input">-->
+      <!--<button type="submit" class="icon searchIcon">-->
+        <!--<img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">-->
+      <!--</button>-->
+      <!--<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener" class="icon randomIcon">-->
+        <!--<img src="https://image.ibb.co/fR5OX5/random.png" alt="Shuffle Icon">-->
+      <!--</a>-->
+    <!--</form>-->
+
+  <!--</header>-->
 
 
 
