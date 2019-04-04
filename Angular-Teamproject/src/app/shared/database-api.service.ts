@@ -11,7 +11,6 @@ export class DatabaseApiService {
   private groupID = '&group=7ZWHL'; // Used for test create new for final.
 
   getData(): Observable<any> {
-    // request will output a JSON object
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
   setData(key: object, value: number = 0): Observable<any> {
@@ -23,10 +22,10 @@ export class DatabaseApiService {
     return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + stringObject);
   }
   getTop10() {
-    // reguest data - getData() save as a object...
-    // topTenList = data.sort( (x, y) => y.value - x.value );
-    // topTenList = topTenList.slice(0, 10);
-    // return topTenList
+    const objectDatabse: object = this.getData();
+    let topTenList = objectDatabse.data.sort( (x: object, y: object) => y.value - x.value );
+    topTenList = topTenList.slice(0, 10);
+    return topTenList;
   }
 
   constructor(private http: HttpClient) { }
