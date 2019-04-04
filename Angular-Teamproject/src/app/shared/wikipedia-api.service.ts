@@ -6,15 +6,15 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class WikipediaAPIService {
-  private query: string;
-  // ${this.srchQuery}
-  URL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=10&srsearch=`;
 
-  constructor(private http: HttpClient) {
-  }
+  private wikiURL = `https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&search=`;
+  private limit = `&limit=5`;
+  private format = `&format=json`;
+
+  constructor(private http: HttpClient) {}
 
   getArticle(query): Observable<any> {
-    return this.http.get(this.URL + query);
+    return this.http.get(this.wikiURL + query + this.limit + this.format);
   }
 }
 
