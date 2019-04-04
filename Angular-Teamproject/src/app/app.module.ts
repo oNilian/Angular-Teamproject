@@ -5,6 +5,7 @@ import {RatinglistModule} from './ratinglist/ratinglist.module';
 import {SharedModule} from './shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {WikipediaAPIService} from './shared/wikipedia-api.service';
+import {DatabaseApiService} from './shared/database-api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -25,7 +26,7 @@ import {NavigationModule} from './navigation/navigation.module';
     MatSliderModule,
 
   ],
-  providers: [WikipediaAPIService],
+  providers: [WikipediaAPIService, DatabaseApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
