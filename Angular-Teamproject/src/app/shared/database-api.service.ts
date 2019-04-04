@@ -11,13 +11,16 @@ export class DatabaseApiService {
   private groupID = '&group=7ZWHL'; // Used for test create new for final.
 
   getData(): Observable<any> {
+    // request will output a JSON object
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
   setData(key: object, value: number = 0): Observable<any> {
-    return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + value);
+    const stringObject: string = JSON.stringify(key);
+    return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + stringObject + '&value=' + value);
   }
   delData(key: object) {
-    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
+    const stringObject: string = JSON.stringify(key);
+    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + stringObject);
   }
   getTop10() {
     // reguest data - getData() save as a object...
