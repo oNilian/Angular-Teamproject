@@ -7,7 +7,7 @@ import { Validators, AbstractControl } from '@angular/forms'
  templateUrl: './form.component.html',
  styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class AddNewArticleComponent implements OnInit {
  linkName: string ='';
  realLink: string ='';
 
