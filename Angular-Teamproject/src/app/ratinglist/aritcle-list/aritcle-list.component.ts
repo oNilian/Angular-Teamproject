@@ -11,9 +11,11 @@ export class AritcleListComponent implements OnInit {
   articles: string;
   wikiLink: string;
 
-  constructor(private wikiService: WikipediaAPIService) {}
+  constructor(private wikiService: WikipediaAPIService) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   searchWikipedia(q: string) {
     return this.wikiService.getArticle(q).subscribe(wiki => {
@@ -21,12 +23,6 @@ export class AritcleListComponent implements OnInit {
       this.articles = wiki[2];
       this.wikiLink = wiki[3];
       console.log(this.wikiLink);
-    });
-  }
-
-  searchRandomWikipedia() {
-    return this.wikiService.getRandom().subscribe(wiki => {
-      console.log(wiki.extract);
     });
   }
 }
