@@ -6,7 +6,6 @@ import {SharedModule} from './shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {WikipediaAPIService} from './shared/wikipedia-api.service';
 import {HttpClientModule} from '@angular/common/http';
-import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavigationModule} from './navigation/navigation.module';
 import {AddArticleModule} from './add-article/add-article.module';
@@ -23,11 +22,9 @@ import {AddArticleModule} from './add-article/add-article.module';
     FormsModule,
     NavigationModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatSliderModule],
+    BrowserAnimationsModule],
   providers: [WikipediaAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
-
