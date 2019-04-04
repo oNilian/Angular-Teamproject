@@ -6,10 +6,9 @@ import {SharedModule} from './shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {WikipediaAPIService} from './shared/wikipedia-api.service';
 import {HttpClientModule} from '@angular/common/http';
-import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavigationModule} from './navigation/navigation.module';
-
+import {AddArticleModule} from './add-article/add-article.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,12 +21,10 @@ import {NavigationModule} from './navigation/navigation.module';
     NavigationModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-
+    AddArticleModule
   ],
   providers: [WikipediaAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
-
