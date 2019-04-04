@@ -9,12 +9,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavigationModule} from './navigation/navigation.module';
+import {AddArticleModule} from './add-article/add-article.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AddArticleModule,
     BrowserModule,
     RatinglistModule,
     SharedModule,
@@ -22,9 +24,7 @@ import {NavigationModule} from './navigation/navigation.module';
     NavigationModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-
-  ],
+    MatSliderModule],
   providers: [WikipediaAPIService],
   bootstrap: [AppComponent]
 })
