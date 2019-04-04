@@ -9,6 +9,7 @@ import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
  styleUrls: ['./add-new-article.component.css']
 })
 export class AddNewArticleComponent implements OnInit {
+
   titles: string;
   articles: string;
   wikiLink: string;
