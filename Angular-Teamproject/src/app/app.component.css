@@ -7,8 +7,14 @@
     color: lightgray;
 }
 
+.sneakyUnicorn {
+    align-items: flex-start;
+    background-color: gray;
+    height: 70px;
+    width: 100%;
+}
+
 .headerContainer {
-    padding: 10.5px;
     background-color: black;
     opacity: 0.85;
     position: fixed;
