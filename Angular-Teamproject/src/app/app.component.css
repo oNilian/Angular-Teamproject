@@ -13,10 +13,12 @@
     opacity: 0.85;
     position: fixed;
     width: 100%;
+    z-index: 5;
 }
 
 .mainContainer {
     text-align: center;
+    z-index: 2;
 }
 
 .footerContainer {

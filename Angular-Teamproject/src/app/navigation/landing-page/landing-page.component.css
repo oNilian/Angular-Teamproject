@@ -1,16 +1,42 @@
 
 .heroImageContainer {
-
+    position: relative;
 }
 
 .userValuesContainer {
     z-index: 1;
+    position: absolute;
+    top: 85%;
+    left: 65%;
+    display: flex;
+    width: 25%;
+    /* transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+}
+
+input {
+    margin: 0 5px;
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    background-color: red;
+    border: red;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 img {
+    /* opacity: 0.25; */
     z-index: -1;
     display: flex;
     height: auto;
     max-width: 100%;
 }
-
