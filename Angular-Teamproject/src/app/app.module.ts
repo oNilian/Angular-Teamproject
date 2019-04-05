@@ -30,5 +30,4 @@ import {AddArticleModule} from './add-article/add-article.module';
   providers: [WikipediaAPIService, DatabaseApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -1,41 +1,77 @@
+<main>
+  <header class="searchForm-container">
+
+    <form class="searchForm">
+      <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!"
+             [ngModelOptions]="{standalone: true}"
+      >
+      <button type="submit" (click)="searchWikipedia(query)"><i class="fas fa-search fa-4x">
+        <i class="material-icons">
+          youtube_searched_for
+        </i>
+      </i>
+      </button>
+      <button type="submit" (click)="sortByTitle()"><i class="material-icons">
+        keyboard_arrow_up
+      </i></button>
+      <button (click)="reverseSortbyTitle()"><i class="material-icons">
+        keyboard_arrow_down
+      </i></button>
+    </form>
+    <!--filter input form-->
+    <img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
+    <form class="searchForm">
+      <input class="searchForm-input" type="search" [(ngModel)]="filter" placeholder="Filtrera genom det du hittade!"
+             [ngModelOptions]="{standalone: true}"
+      >
+    </form>
+  </header>
+
+  <section class="searchResults">
+    <div class="result-container" *ngFor="let c of resultsObject; let i = index">
+      <h1 class="title">Article: {{c.title}}</h1>
+      <h4 class="text-snippt">{{c.snippet}}</h4>
+      <p class="time-stamp">Time stamp {{c.timestamp}}</p>
+      <p class="class-wordcount">Word count {{c.wordcount}}</p>
+      <br><br>
+
+    </div>
+
+  </section>
+
+</main>
+<!--<table matSort (matSortChange)="sortData($event)">-->
+<!--<tr>-->
+<!--<th mat-sort-header="name">Dessert (100g)</th>-->
+<!--<th mat-sort-header="calories">Calories</th>-->
+<!--<th mat-sort-header="fat">Fat (g)</th>-->
+<!--<th mat-sort-header="carbs">Carbs (g)</th>-->
+<!--<th mat-sort-header="protein">Protein (g)</th>-->
+<!--</tr>-->
+
+<!--<tr *ngFor="let dessert of sortedData">-->
+<!--<td>{{dessert.name}}</td>-->
+<!--<td>{{dessert.calories}}</td>-->
+<!--<td>{{dessert.fat}}</td>-->
+<!--<td>{{dessert.carbs}}</td>-->
+<!--<td>{{dessert.protein}}</td>-->
+<!--</tr>-->
+<!--</table>-->
 
 
-  <main>
-    <header class="searchForm-container">
-      <img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
-      <form class="searchForm">
-        <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!"
-               [ngModelOptions]="{standalone: true}"
-        >
-        <button type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
-          <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
-        </button>
-        <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener" class="icon randomIcon">
-        <img src="https://image.ibb.co/fR5OX5/random.png" alt="Shuffle Icon">
-        </a>
-      </form>
-    </header>
+<!--<a href="{{wikiUserLink}}{{article.title}}" target="_blank"><h1>{{article.title}}</h1></a>-->
+<!--<h3>{{article.extract}}</h3>-->
+<!--<h1><a href="{{wikiLink[0]}}"  target="_blank">{{titles[0]}}</a></h1>-->
+<!--<h3>{{articles[0]}}</h3>-->
 
-    <section class="searchResults">
-      <h1><a href="{{wikiLink[0]}}"  target="_blank">{{titles[0]}}</a></h1>
-      <h3>{{articles[0]}}</h3>
+<!--<h1><a href="{{wikiLink[1]}}"  target="_blank">{{titles[1]}}</a></h1>-->
+<!--<h3>{{articles[1]}}</h3>-->
 
-      <h1><a href="{{wikiLink[1]}}"  target="_blank">{{titles[1]}}</a></h1>
-      <h3>{{articles[1]}}</h3>
+<!--<h1><a href="{{wikiLink[2]}}"  target="_blank">{{titles[2]}}</a></h1>-->
+<!--<h3>{{articles[2]}}</h3>-->
 
-      <h1><a href="{{wikiLink[2]}}"  target="_blank">{{titles[2]}}</a></h1>
-      <h3>{{articles[2]}}</h3>
+<!--<h1><a href="{{wikiLink[3]}}"  target="_blank">{{titles[3]}}</a></h1>-->
+<!--<h3>{{articles[3]}}</h3>-->
 
-      <h1><a href="{{wikiLink[3]}}"  target="_blank">{{titles[3]}}</a></h1>
-      <h3>{{articles[3]}}</h3>
-
-      <h1><a href="{{wikiLink[4]}}" target="_blank">{{titles[4]}}</a></h1>
-      <h3>{{articles[4]}}</h3>
-    </section>
-
-  </main>
-
-
-
-  <!--<a href="{{wikiUserLink}}{{article.title}}" target="_blank"><h1>{{article.title}}</h1></a>-->
-  <!--<h3>{{article.extract}}</h3>-->
+<!--<h1><a href="{{wikiLink[4]}}" target="_blank">{{titles[4]}}</a></h1>-->
+<!--<h3>{{articles[4]}}</h3>-->
