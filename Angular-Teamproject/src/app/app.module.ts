@@ -24,8 +24,7 @@ import {AddArticleModule} from './add-article/add-article.module';
     NavigationModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    ToplistModule
+    ToplistModule,
     AddArticleModule
   ],
   providers: [WikipediaAPIService, DatabaseApiService],
