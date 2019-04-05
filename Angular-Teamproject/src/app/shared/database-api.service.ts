@@ -20,13 +20,13 @@ https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&val
   }
   setData(title: string, article: string, url: string): Observable<any> {
     const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;
-    const key =  Math.floor((Math.random() * 999999) + 1);
+    const uniqueID =  Math.floor((Math.random() * 999999) + 1);
 
-    this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + valueString).subscribe();
+    this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + valueString).subscribe();
     return;
   }
-  delData(key: number) {
-    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key).subscribe();
+  delData(uniqueID: number) {
+    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + uniqueID).subscribe();
   }
 
   constructor(private http: HttpClient) { }
