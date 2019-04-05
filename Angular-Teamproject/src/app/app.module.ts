@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavigationModule} from './navigation/navigation.module';
+import {ToplistModule} from './toplist/toplist.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {NavigationModule} from './navigation/navigation.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
-
+    ToplistModule
   ],
   providers: [WikipediaAPIService, DatabaseApiService],
   bootstrap: [AppComponent]

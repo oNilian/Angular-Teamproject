@@ -24,9 +24,9 @@ export class DatabaseApiService {
   }
   getTop10() {
     const objectDatabse: object = this.getData();
-    let topTenList = objectDatabse.data.sort( (x: object, y: object) => y.value - x.value );
-    topTenList = topTenList.slice(0, 10);
-    return topTenList;
+    // let topTenList = objectDatabse.data.sort( (x: object, y: object) => y.value - x.value );
+    // topTenList = topTenList.slice(0, 10);
+    // return topTenList;
   }
 
   constructor(private http: HttpClient) { }
