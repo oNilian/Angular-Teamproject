@@ -24,10 +24,9 @@ https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&val
     // key should be a random id number
     return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + value);
   }
-  delData() {
+  delData(key: number) {
     console.log('delData');
-    // Will not work...
-    //return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
+    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
   }
 
   constructor(private http: HttpClient) { }
