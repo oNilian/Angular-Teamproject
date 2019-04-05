@@ -8,30 +8,28 @@ import { Observable } from 'rxjs';
 })
 export class TopTenComponent implements OnInit {
   topTenList = [];
+  dataArray = [];
 
   constructor(private database: DatabaseApiService) { }
 
   ngOnInit() {
     this.database.getData().subscribe(dataHandler => {
-      let dataArray = [];
       if (dataHandler.status === 'success') {
-        dataHandler.data.forEach((singleData: any) => {
-          dataArray.push( JSON.parse(singleData.value) );
+        dataHandler.data.forEach( (singleData: any) => {
+          this.dataArray.push( JSON.parse(singleData.value) );
         });
-        this.topTenList = dataArray.sort( (x: any, y: any) => y.rating - x.rating );
-        this.topTenList = this.topTenList.slice(0, 10);
+
+        this.topTenList = this.dataArray.sort( (x: any, y: any) => y.rating - x.rating ).slice(0, 10);
         this.topTenList.forEach(data => {
           let rating = data.rating;
           data.rating = '';
           let i=0;
           while(i < rating) {
-            data.rating += '⭐';
+            data.rating += '⭐ ';
             i++;
           }
         });
-      } else {
-        console.log('Top-ten subscribtion error!');
-      }
+      } else { console.log('Database API Error!'); }
     });
   }
 
