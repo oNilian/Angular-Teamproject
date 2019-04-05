@@ -19,10 +19,11 @@ https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&val
     console.log('getData');
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
-  setData(value: object, key: number = 0): Observable<any> {
+  setData(value: object): Observable<any> {
     console.log('setData');
-    // key should be a random id number
-    return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + value);
+    const valueString = JSON.stringify(value);
+    const key =  Math.floor((Math.random() * 999999) + 1); 
+    return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + valueString);
   }
   delData(key: number) {
     console.log('delData');
