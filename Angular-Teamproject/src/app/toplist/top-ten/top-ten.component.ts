@@ -13,11 +13,13 @@ export class TopTenComponent implements OnInit {
 
   ngOnInit() {
     this.database.getData().subscribe(dataHandler => {
-      console.log(dataHandler);
       if (dataHandler.status === 'success') {
-        console.log('Top-ten subscribtion got a good response');
-        // map data
-        let topTenList = dataHandler.data.sort( (x: any, y: any) => y.value - x.value );
+        const dataArray = [];
+        dataHandler.data.forEach((singleData: any) => {
+          dataArray.push(JSON.parse(singleData.value));
+        });
+        console.log('dataArray: ', dataArray);
+        let topTenList = dataArray.sort( (x: any, y: any) => y.value - x.value );
         topTenList = topTenList.slice(0, 10);
         console.log(topTenList);
       } else {
