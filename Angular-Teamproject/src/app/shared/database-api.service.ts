@@ -8,15 +8,19 @@ import { log } from 'util';
 })
 export class DatabaseApiService {
 
-  private baseURL = 'https://forverkliga.se/JavaScript/api/api-db.php?';
-  private groupID = '&group=1av0E'; // Used for test create new for final.
+  private baseURL: string = 'https://forverkliga.se/JavaScript/api/api-db.php?';
+  private groupID: string = '&group=1av0E'; // Used for test create new for final.
+  private dataArray: Array<object> = [];
 
-/*
-Sample data:
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&value={"title": "Random wiki entry 13", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 5}
-*/
-  getData(): Observable<any> {
-    return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
+  getData() {
+    this.http.get(this.baseURL + 'whathaveidone' + this.groupID).subscribe((dataHandler: any) => {
+      if (dataHandler.status === 'success') {
+        dataHandler.data.forEach( (singleData: any) => {
+          this.dataArray.push( JSON.parse(singleData.value) );
+        });
+      } else { console.log('Database API Error!'); }
+    });
+    return this.dataArray;
   }
   setData(title: string, article: string, url: string): Observable<any> {
     const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;

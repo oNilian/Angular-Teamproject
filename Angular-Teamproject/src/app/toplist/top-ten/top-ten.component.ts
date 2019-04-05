@@ -6,30 +6,37 @@ import { DatabaseApiService } from '../../shared/database-api.service';
   styleUrls: ['./top-ten.component.css']
 })
 export class TopTenComponent implements OnInit {
-  topTenList = [];
-  dataArray = [];
+  topTenList: Array<object> = [];
+  databaseArray: Array<object> = [];
 
-  constructor(private database: DatabaseApiService) { }
+  constructor(private databaseApiService: DatabaseApiService) { }
 
   ngOnInit() {
-    this.database.getData().subscribe(dataHandler => {
-      if (dataHandler.status === 'success') {
-        dataHandler.data.forEach( (singleData: any) => {
-          this.dataArray.push( JSON.parse(singleData.value) );
-        });
+    this.databaseArray = this.databaseApiService.getData();
+    console.log(this.databaseArray);
+    
+    this.topTenList = this.databaseArray.sort( (x: any, y: any) => {
+      console.log('why doesnt this shit work');
+      
+      console.log('x: ', x);
+      console.log('y: ', y);
+      return y.rating - x.rating
+    }).slice(0, 10);
+    console.log(this.topTenList);
 
-        this.topTenList = this.dataArray.sort( (x: any, y: any) => y.rating - x.rating ).slice(0, 10);
-        this.topTenList.forEach(data => {
-          let rating = data.rating;
-          data.rating = '';
-          let i=0;
-          while(i < rating) {
-            data.rating += '⭐ ';
-            i++;
-          }
-        });
-      } else { console.log('Database API Error!'); }
+    /*
+    this.topTenList.forEach(data => {
+      let rating = data.rating;
+      data.rating = '';
+      let i=0;
+      while(i < rating) {
+        data.rating += '⭐ ';
+        i++;
+      }
     });
+    */
   }
+  sortTopTen() {
 
+  }
 }
