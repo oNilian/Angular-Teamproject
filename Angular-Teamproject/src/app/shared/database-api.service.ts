@@ -9,27 +9,11 @@ import { log } from 'util';
 export class DatabaseApiService {
 
   private baseURL = 'https://forverkliga.se/JavaScript/api/api-db.php?';
-  private groupID = '&group=s8QwD'; // Used for test create new for final.
+  private groupID = '&group=1av0E'; // Used for test create new for final.
 
 /*
-YNeBZ titles etc without quotes
-pewxH title etch with '
-s8QwD title etch with "
-
-Since key is used for delete it we cannot store ranking data there so maybe change to store it in the value object {..., rating: 0 }
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=4123&value={"title": "Random wiki entry 1", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 5}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=4523&value={"title": "Random wiki entry 2DatabaseApiService: "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 0}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=4534&value={"title": "Random wiki entry 3", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 1}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=4143&value={"title": "Random wiki entry 4", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 3}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=4123&value={"title": "Random wiki entry 5", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 2}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=4324&value={"title": "Random wiki entry 6", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 3}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=6344&value={"title": "Random wiki entry 7", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 4}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=8534&value={"title": "Random wiki entry 8", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 1}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=9854&value={"title": "Random wiki entry 9", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 5}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=6424&value={"title": "Random wiki entry 10", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 2}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=6454&value={"title": "Random wiki entry 11", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 0}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=9454&value={"title": "Random wiki entry 12", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 3}
-https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=s8QwD&key=7534&value={"title": "Random wiki entry 13", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 5}
+Sample data:
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&value={"title": "Random wiki entry 13", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 5}
 */
   getData(): Observable<any> {
     console.log('getData');

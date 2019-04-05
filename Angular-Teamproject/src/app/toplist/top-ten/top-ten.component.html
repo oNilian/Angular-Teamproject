@@ -1,3 +1,11 @@
-<p>
-  top-ten works!
-</p>
+<h1>Top 10 List</h1>
+<ul>
+  <li *ngFor="let item of topTenList; let i = index">
+    <h2>#{{ i+1 }} <a href="{{ topTenList[i].link }}">{{ topTenList[i].title }}</a></h2>
+    <p>{{ topTenList[i].article }}</p>
+    <p>
+      {{ topTenList[i].rating }} - change to stars by looping while(let a; a<topTenList[i].rating)
+      <span>⭐</span>
+    </p>
+  </li>
+</ul>
