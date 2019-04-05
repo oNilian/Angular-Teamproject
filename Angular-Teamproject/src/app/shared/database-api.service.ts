@@ -15,13 +15,14 @@ export class DatabaseApiService {
     console.log('getData');
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
-  setData(key: object, value: number = 0): Observable<any> {
+  setData(value: object, key: number = 0): Observable<any> {
     console.log('setData');
     return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + value);
   }
-  delData(key: object) {
+  delData() {
     console.log('delData');
-    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
+    // Will not work...
+    //return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
   }
 
   constructor(private http: HttpClient) { }
