@@ -9,7 +9,7 @@ import { log } from 'util';
 export class DatabaseApiService {
 
   private baseURL = 'https://forverkliga.se/JavaScript/api/api-db.php?';
-  private groupID = '&group=7ZWHL'; // Used for test create new for final.
+  private groupID = '&group=qN6GF'; // Used for test create new for final.
 
   getData(): Observable<any> {
     console.log('getData');
