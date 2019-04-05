@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule} from '@angular/forms';
 import { Validators, AbstractControl } from '@angular/forms'
 import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
-import { DatabaseApiService } from '../../shared/database-api.service'
+import { DatabaseApiService } from '../../shared/database-api.service';
 
 @Component({
  selector: 'app-add-new-article',
@@ -11,7 +11,6 @@ import { DatabaseApiService } from '../../shared/database-api.service'
 })
 export class AddNewArticleComponent implements OnInit {
   [x: string]: any;
-  databaseApiService: DatabaseApiService;
   titles = [];
   articles = [];
   wikiLink = [];
@@ -39,17 +38,8 @@ export class AddNewArticleComponent implements OnInit {
     });
   }
 
-  onAddToListClick(item){
-    this.databaseApiService.setData(
-      {
-       title: "Random wiki entry 13",
-       article: "long information about the entry",
-       link: "http://en.wikipedia.org/wiki/random",
-       rating: 5
-    },
-    6758);
+  onAddToListClick(title: string, article: string, url: string) {
+    this.databaseApiService.setData(title, article, url);
   }
-
-//{“title”: “Random wiki entry 13", “article”: “long information about the entry”, “link”: “http://en.wikipedia.org/wiki/random“, “rating”: 5}
 
 }

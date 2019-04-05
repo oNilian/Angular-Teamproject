@@ -18,15 +18,15 @@ https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&val
   getData(): Observable<any> {
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
-  setData(value: object): Observable<any> {
-    console.log('setData');
-    const valueString = JSON.stringify(value);
-    const key =  Math.floor((Math.random() * 999999) + 1); 
-    return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + valueString);
+  setData(title: string, article: string, url: string): Observable<any> {
+    const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;
+    const key =  Math.floor((Math.random() * 999999) + 1);
+
+    this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + valueString).subscribe();
+    return;
   }
   delData(key: number) {
-    console.log('delData');
-    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
+    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key).subscribe();
   }
 
   constructor(private http: HttpClient) { }

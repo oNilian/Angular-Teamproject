@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseApiService } from '../../shared/database-api.service';
-import { Observable } from 'rxjs';
 @Component({
   selector: 'app-top-ten',
   templateUrl: './top-ten.component.html',

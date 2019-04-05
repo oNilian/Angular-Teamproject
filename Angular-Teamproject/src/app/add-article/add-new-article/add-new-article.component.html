@@ -17,9 +17,9 @@
     </header>
 
     <section class="searchResults" *ngFor="let item of titles; let i=index ">
-      <h1><a href="{{wikiLink}}"  target="_blank">{{titles[i]}}</a></h1>
+      <h1><a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a></h1>
       <h3>{{articles[i]}}</h3>
-      <span class="addArticle"(click)= "onAddToListClick(item)">Lägg till</span>
+      <span class="addArticle"(click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])">Lägg till</span>
 
     </section>
 
