@@ -9,8 +9,23 @@ import { log } from 'util';
 export class DatabaseApiService {
 
   private baseURL = 'https://forverkliga.se/JavaScript/api/api-db.php?';
-  private groupID = '&group=qN6GF'; // Used for test create new for final.
-
+  private groupID = '&group=YNeBZ'; // Used for test create new for final.
+/*
+Since key is used for delete it we cannot store ranking data there so maybe change to store it in the value object {..., rating: 0 }
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 1', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 2', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 3', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 4', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 5', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 6', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 7', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 8', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 9', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 10', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 11', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 12', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=YNeBZ&key=4&value={title: 'Random wiki entry 13', article: 'long information about the entry', link: 'http://en.wikipedia.org/wiki/random'}
+*/
   getData(): Observable<any> {
     console.log('getData');
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
