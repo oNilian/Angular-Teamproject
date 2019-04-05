@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./top-ten.component.css']
 })
 export class TopTenComponent implements OnInit {
-  public getDatabase: Observable<any>;
   topTenList = [];
 
   constructor(private database: DatabaseApiService) { }
@@ -21,7 +20,15 @@ export class TopTenComponent implements OnInit {
         });
         this.topTenList = dataArray.sort( (x: any, y: any) => y.rating - x.rating );
         this.topTenList = this.topTenList.slice(0, 10);
-        console.log(this.topTenList);
+        this.topTenList.forEach(data => {
+          let rating = data.rating;
+          data.rating = '';
+          let i=0;
+          while(i < rating) {
+            data.rating += '⭐';
+            i++;
+          }
+        });
       } else {
         console.log('Top-ten subscribtion error!');
       }

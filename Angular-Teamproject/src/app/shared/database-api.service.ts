@@ -16,7 +16,6 @@ Sample data:
 https://forverkliga.se/JavaScript/api/api-db.php?op=set&group=1av0E&key=7534&value={"title": "Random wiki entry 13", "article": "long information about the entry", "link": "http://en.wikipedia.org/wiki/random", "rating": 5}
 */
   getData(): Observable<any> {
-    console.log('getData');
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
   setData(value: object): Observable<any> {
