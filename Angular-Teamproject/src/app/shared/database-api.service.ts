@@ -15,8 +15,8 @@ export class DatabaseApiService {
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
   
-  setData(title: string, article: string, url: string): Observable<any> {
-    const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;
+  setData(title: string, article: string, url: string, rating: number = 0): Observable<any> {
+    const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": number}`;
     const uniqueID =  Math.floor((Math.random() * 999999) + 1);
 
     this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + valueString).subscribe();
