@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { log } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +9,14 @@ export class DatabaseApiService {
 
   private baseURL: string = 'https://forverkliga.se/JavaScript/api/api-db.php?';
   private groupID: string = '&group=1av0E'; // Used for test create new for final.
-  private dataArray: Array<object> = [];
-
+  private dataArray = [];
+  
   getData() {
     this.http.get(this.baseURL + 'whathaveidone' + this.groupID).subscribe((dataHandler: any) => {
       if (dataHandler.status === 'success') {
         dataHandler.data.forEach( (singleData: any) => {
           this.dataArray.push( JSON.parse(singleData.value) );
+          console.log(typeof(this.dataArray));
         });
       } else { console.log('Database API Error!'); }
     });

@@ -6,22 +6,22 @@ import { DatabaseApiService } from '../../shared/database-api.service';
   styleUrls: ['./top-ten.component.css']
 })
 export class TopTenComponent implements OnInit {
-  topTenList: Array<object> = [];
-  databaseArray: Array<object> = [];
+  topTenList = [];
+  databaseArray = [];
 
   constructor(private databaseApiService: DatabaseApiService) { }
 
   ngOnInit() {
     this.databaseArray = this.databaseApiService.getData();
-    console.log('databaseArray: ', this.databaseArray);
+    console.log('databaseArray: ', this.databaseArray, typeof(this.databaseArray));
     
-    this.topTenList = this.databaseArray.sort( (x: any, y: any) => {
+    this.topTenList = this.databaseArray.sort((x: any, y: any) => {
+      console.log('in sort function')
       console.log('x: ', x); //should be a index number of the array...
       console.log('y: ', y);
       return y.rating - x.rating;
     }); // .slice(0, 10);
-    console.log('this.topTenList: ',this.topTenList);
-
+    console.log('this.topTenList: ', this.topTenList, typeof(this.databaseArray));
     /*
     this.topTenList.forEach(data => {
       let rating = data.rating;
@@ -33,8 +33,5 @@ export class TopTenComponent implements OnInit {
       }
     });
     */
-  }
-  sortTopTen() {
-
   }
 }
