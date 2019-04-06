@@ -11,17 +11,10 @@ export class DatabaseApiService {
   private groupID: string = '&group=1av0E'; // Used for test create new for final.
   private dataArray = [];
   
-  getData() {
-    this.http.get(this.baseURL + 'whathaveidone' + this.groupID).subscribe((dataHandler: any) => {
-      if (dataHandler.status === 'success') {
-        dataHandler.data.forEach( (singleData: any) => {
-          this.dataArray.push( JSON.parse(singleData.value) );
-          console.log(typeof(this.dataArray));
-        });
-      } else { console.log('Database API Error!'); }
-    });
-    return this.dataArray;
+  getData(): Observable<any> {
+    return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
+  
   setData(title: string, article: string, url: string): Observable<any> {
     const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;
     const uniqueID =  Math.floor((Math.random() * 999999) + 1);
@@ -29,9 +22,9 @@ export class DatabaseApiService {
     this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + valueString).subscribe();
     return;
   }
+
   delData(uniqueID: number) {
     return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + uniqueID).subscribe();
   }
-
   constructor(private http: HttpClient) { }
 }
