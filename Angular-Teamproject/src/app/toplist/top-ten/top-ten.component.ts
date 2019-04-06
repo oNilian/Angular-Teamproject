@@ -13,16 +13,14 @@ export class TopTenComponent implements OnInit {
 
   ngOnInit() {
     this.databaseArray = this.databaseApiService.getData();
-    console.log(this.databaseArray);
+    console.log('databaseArray: ', this.databaseArray);
     
     this.topTenList = this.databaseArray.sort( (x: any, y: any) => {
-      console.log('why doesnt this shit work');
-      
-      console.log('x: ', x);
+      console.log('x: ', x); //should be a index number of the array...
       console.log('y: ', y);
-      return y.rating - x.rating
-    }).slice(0, 10);
-    console.log(this.topTenList);
+      return y.rating - x.rating;
+    }); // .slice(0, 10);
+    console.log('this.topTenList: ',this.topTenList);
 
     /*
     this.topTenList.forEach(data => {
