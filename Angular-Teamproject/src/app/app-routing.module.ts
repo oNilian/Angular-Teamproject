@@ -8,10 +8,10 @@ import {TopTenComponent} from './toplist/top-ten/top-ten.component';
 
 const routes: Routes = [
     {path: '', component: LandingPageComponent},
-    {path: 'Home', component: LandingPageComponent},
-    {path: 'Toplist', component: TopTenComponent},
-    {path: 'Rating', component: AritcleListComponent},
-    {path: 'AddArticle', component: AddNewArticleComponent},
+    {path: 'home', component: LandingPageComponent},
+    {path: 'toplist', component: TopTenComponent},
+    {path: 'rating', component: AritcleListComponent},
+    {path: 'addarticle', component: AddNewArticleComponent},
     // {path: 'About us', component: StridaEvoComponent},
 ];
 
