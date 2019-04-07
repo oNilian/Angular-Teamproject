@@ -1,77 +1,54 @@
+
 <main>
+
   <header class="searchForm-container">
 
     <form class="searchForm">
-      <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!"
-             [ngModelOptions]="{standalone: true}"
-      >
-      <button type="submit" (click)="searchWikipedia(query)"><i class="fas fa-search fa-4x">
-        <i class="material-icons">
-          youtube_searched_for
-        </i>
-      </i>
+      <img class="wiki-logo" src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
+
+      <input type="search" class="searchForm-input" [(ngModel)]="searchText"  [ngModelOptions]="{standalone: true}" autocomplete="off" placeholder="Sparade artiklar ...">
+      <button type="submit" class="icon searchIcon">
+        <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
       </button>
-      <button type="submit" (click)="sortByTitle()"><i class="material-icons">
-        keyboard_arrow_up
-      </i></button>
-      <button (click)="reverseSortbyTitle()"><i class="material-icons">
-        keyboard_arrow_down
-      </i></button>
+      <!--sortByTitle() {-->
+      <!--this.data.sort((a, b) => a.title.localeCompare(b.title));-->
+      <!--}-->
+
+      <!--reverseSortbyTitle() {-->
+      <!--this.data.sort((a, b) => b.title.localeCompare(a.title));-->
+      <!--}-->
+
+      <button type="submit" class="icon searchIcon" (click)="reverseSortbyTitle()">
+        <!--<i class="large material-icons icon-blue">note_add</i>-->
+        <i class="material-icons icon-white">
+          arrow_downward
+        </i>
+      </button>
+      <button type="submit" class="icon searchIcon" (click)="sortByTitle()">
+        <i class="material-icons icon-white">
+          arrow_upward
+        </i>
+    </button>
     </form>
-    <!--filter input form-->
-    <img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
-    <form class="searchForm">
-      <input class="searchForm-input" type="search" [(ngModel)]="filter" placeholder="Filtrera genom det du hittade!"
-             [ngModelOptions]="{standalone: true}"
-      >
-    </form>
+
   </header>
 
   <section class="searchResults">
-    <div class="result-container" *ngFor="let c of resultsObject; let i = index">
-      <h1 class="title">Article: {{c.title}}</h1>
-      <h4 class="text-snippt">{{c.snippet}}</h4>
-      <p class="time-stamp">Time stamp {{c.timestamp}}</p>
-      <p class="class-wordcount">Word count {{c.wordcount}}</p>
-      <br><br>
+    <div class="resultItem" *ngFor=" let wiki of data| filter:searchText">
+      <h3 class="resultItem-title">
+        <a href="" class="wiki-title">{{wiki.title| uppercase}}</a>
 
-    </div>
+      </h3>
+      <h4><span class="word-count">This article contains {{wiki.wordcount}} words</span><br></h4>
 
+      <h3 class="time-stamp"><span>This article was updated in {{wiki.timestamp | date: "dd/MM/yyyy"}}</span></h3>
+
+      <ngb-rating class="wiki-title" [(rate)]="currentRate"> </ngb-rating>
+      <pre class="wiki-title">Rate this article: <b>{{currentRate}}  </b><button class="btn-rating" (click)="SaveObjectFromRatingList()">Save my rating</button></pre>
+
+     </div>
   </section>
 
-</main>
-<!--<table matSort (matSortChange)="sortData($event)">-->
-<!--<tr>-->
-<!--<th mat-sort-header="name">Dessert (100g)</th>-->
-<!--<th mat-sort-header="calories">Calories</th>-->
-<!--<th mat-sort-header="fat">Fat (g)</th>-->
-<!--<th mat-sort-header="carbs">Carbs (g)</th>-->
-<!--<th mat-sort-header="protein">Protein (g)</th>-->
-<!--</tr>-->
-
-<!--<tr *ngFor="let dessert of sortedData">-->
-<!--<td>{{dessert.name}}</td>-->
-<!--<td>{{dessert.calories}}</td>-->
-<!--<td>{{dessert.fat}}</td>-->
-<!--<td>{{dessert.carbs}}</td>-->
-<!--<td>{{dessert.protein}}</td>-->
-<!--</tr>-->
-<!--</table>-->
+ </main>
 
 
-<!--<a href="{{wikiUserLink}}{{article.title}}" target="_blank"><h1>{{article.title}}</h1></a>-->
-<!--<h3>{{article.extract}}</h3>-->
-<!--<h1><a href="{{wikiLink[0]}}"  target="_blank">{{titles[0]}}</a></h1>-->
-<!--<h3>{{articles[0]}}</h3>-->
-
-<!--<h1><a href="{{wikiLink[1]}}"  target="_blank">{{titles[1]}}</a></h1>-->
-<!--<h3>{{articles[1]}}</h3>-->
-
-<!--<h1><a href="{{wikiLink[2]}}"  target="_blank">{{titles[2]}}</a></h1>-->
-<!--<h3>{{articles[2]}}</h3>-->
-
-<!--<h1><a href="{{wikiLink[3]}}"  target="_blank">{{titles[3]}}</a></h1>-->
-<!--<h3>{{articles[3]}}</h3>-->
-
-<!--<h1><a href="{{wikiLink[4]}}" target="_blank">{{titles[4]}}</a></h1>-->
-<!--<h3>{{articles[4]}}</h3>-->
