@@ -7,24 +7,24 @@ import { Observable } from 'rxjs';
 })
 export class DatabaseApiService {
 
-  private baseURL = 'https://forverkliga.se/JavaScript/api/api-db.php?';
-  private groupID = '&group=7ZWHL'; // Used for test create new for final.
-
+  private baseURL: string = 'https://forverkliga.se/JavaScript/api/api-db.php?';
+  private groupID: string = '&group=1av0E'; // Used for test create new for final.
+  private dataArray = [];
+  
   getData(): Observable<any> {
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
-  setData(key: object, value: number = 0): Observable<any> {
-    return this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + key + '&value=' + value);
-  }
-  delData(key: object) {
-    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + key);
-  }
-  getTop10() {
-    // reguest data - getData() save as a object...
-    // topTenList = data.sort( (x, y) => y.value - x.value );
-    // topTenList = topTenList.slice(0, 10);
-    // return topTenList
+  
+  setData(title: string, article: string, url: string): Observable<any> {
+    const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;
+    const uniqueID =  Math.floor((Math.random() * 999999) + 1);
+
+    this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + valueString).subscribe();
+    return;
   }
 
+  delData(uniqueID: number) {
+    return this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + uniqueID).subscribe();
+  }
   constructor(private http: HttpClient) { }
 }

@@ -1,13 +1,33 @@
-<h1>Bidra gärna med en egen länk</h1>
 
-<div class="addLinkForm">
 
- <label for="nameOfLink">Beskriv din länk</label>
- <input type="text" class="nameOfLink" formControlName = "nameControl">
+  <main>
+    <header class="searchForm-container">
+      <img src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
+      <form class="searchForm">
+        <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta intressanta wiki-artiklar!"
+               [ngModelOptions]="{standalone: true}"
+        >
+        <button type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
+          <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
+        </button>
+        <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener" class="icon randomIcon">
+        <img src="https://image.ibb.co/fR5OX5/random.png" alt="Shuffle Icon">
+        </a>
+      </form>
+    </header>
 
- <br>
- <label for="actualLink">Klistra in din länk</label>
- <input type="text" class="actualLink" formControlName = "linkControl">
- <br>
- <button (click)="onAddLinkClick">Lägg till</button>
-</div>
+    <section class="searchResults" *ngFor="let item of titles; let i=index ">
+      <h1><a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a></h1>
+      <h3>{{articles[i]}}</h3>
+      <span class="addArticle"(click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])">Lägg till</span>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <!--<a href="{{wikiUserLink}}{{article.title}}" target="_blank"><h1>{{article.title}}</h1></a>-->
+  <!--<h3>{{article.extract}}</h3>-->

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
+import {WikipediaJSONAPI} from '../../shared/wikipediaJSONAPI';
+import {SearchResult} from '../../shared/search-result';
 
 @Component({
   selector: 'app-aritcle-list',
@@ -7,11 +8,21 @@ import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
   styleUrls: ['./aritcle-list.component.css']
 })
 export class AritcleListComponent implements OnInit {
-  titles: string;
-  articles: string;
-  wikiLink: string;
+  resultsObject: SearchResult[];
 
-  constructor(private wikiService: WikipediaAPIService) {
+
+  sortByTitle() {
+    this.resultsObject.sort((a, b) => a.title.localeCompare(b.title));
+    console.log(this.resultsObject);
+  }
+
+  reverseSortbyTitle() {
+    this.resultsObject.sort((a, b) => b.title.localeCompare(a.title));
+    console.log(this.resultsObject);
+  }
+
+
+  constructor(private wikiService: WikipediaJSONAPI) {
   }
 
   ngOnInit() {
@@ -19,10 +30,8 @@ export class AritcleListComponent implements OnInit {
 
   searchWikipedia(q: string) {
     return this.wikiService.getArticle(q).subscribe(wiki => {
-      this.titles = wiki[1];
-      this.articles = wiki[2];
-      this.wikiLink = wiki[3];
-      console.log(this.wikiLink);
+      this.resultsObject = wiki.query.search;
     });
   }
 }
+

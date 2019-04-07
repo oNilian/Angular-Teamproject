@@ -1,38 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule} from '@angular/forms';
 import { Validators, AbstractControl } from '@angular/forms'
+import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
+import { DatabaseApiService } from '../../shared/database-api.service';
 
 @Component({
- selector: 'app-form',
- templateUrl: './form.component.html',
- styleUrls: ['./form.component.css']
+ selector: 'app-add-new-article',
+ templateUrl: './add-new-article.component.html',
+ styleUrls: ['./add-new-article.component.css']
 })
 export class AddNewArticleComponent implements OnInit {
- linkName: string ='';
- realLink: string ='';
+  [x: string]: any;
+  titles = [];
+  articles = [];
+  wikiLink = [];
+  newArticle: string;
 
- nameControl = new FormControl([
-   Validators.required,
-   Validators.minLength(10)
- ]);
- linkControl = new FormControl([
-   Validators.required,
-   Validators.minLength(10)
- ]);
+  constructor(private wikiService: WikipediaAPIService, private databaseApiService: DatabaseApiService ) {
+  }
 
- constructor() { }
+  ngOnInit() {
 
- ngOnInit() {
-    this.linkName = this.nameControl.value;
-    this.realLink = this.linkControl.value;
+  }
 
- }
- onAddLinkClick(){
+  searchWikipedia(q: string) {
+    return this.wikiService.getArticle(q).subscribe(wiki => {
+      wiki[1].forEach(data =>{
+        this.titles.push(data);
+      });
+      wiki[2].forEach(data =>{
+        this.articles.push(data);
+      });
+      wiki[3].forEach(data =>{
+        this.wikiLink.push(data);
+      });
 
- }
-//importera servicedatan för att kunna lägga till artikel.
-//knappfunktion som lägger till en artikel till listan.
-// validering: finns med, url? längd?
- //spara input i variabel
-// localstorage
+    });
+  }
+
+  onAddToListClick(title: string, article: string, url: string) {
+    this.databaseApiService.setData(title, article, url);
+  }
+
 }

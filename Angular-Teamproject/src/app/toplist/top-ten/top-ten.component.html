@@ -1,0 +1,10 @@
+<h1>Top 10 List</h1>
+<ul>
+  <li *ngFor="let item of topTenList; let i = index">
+    <h2>#{{ i+1 }} <a href="{{ topTenList[i].link }}">{{ topTenList[i].title }}</a></h2>
+    <p>{{ topTenList[i].article }}</p>
+    <p>
+      {{ topTenList[i].rating }}
+    </p>
+  </li>
+</ul>
