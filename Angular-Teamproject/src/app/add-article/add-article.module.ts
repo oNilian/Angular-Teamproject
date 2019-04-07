@@ -6,9 +6,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [AddNewArticleComponent],
+  declarations: [
+      AddNewArticleComponent
+    ],
   imports: [
-    CommonModule, HttpClientModule, FormsModule
+    CommonModule, 
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [WikipediaAPIService],
   exports: [
