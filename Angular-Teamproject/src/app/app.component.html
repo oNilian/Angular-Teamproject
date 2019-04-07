@@ -1,20 +1,15 @@
 
 <body class="wrapper">
+
     <header class="headerContainer">
         <app-header></app-header>
     </header>
+    <div class="sneakyUnicorn"></div>
 
 <!--******************/ routed mainContent /******************-->
 
     <main class="mainContainer">
-        <!-- temp component placment for testing only - remove after routing is working -->
-        <!--
-        <app-landing-page></app-landing-page>
-        <app-aritcle-list></app-aritcle-list>
-        <app-add-new-article></app-add-new-article>
-        -->
-        <app-top-ten></app-top-ten>
-        <!-- temp component placment for testing only - remove after routing is working -->
+        <router-outlet></router-outlet>
     </main>
 
 

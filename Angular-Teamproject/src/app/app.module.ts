@@ -1,6 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+
+import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {RouterModule} from '@angular/router';
+
 import {RatinglistModule} from './ratinglist/ratinglist.module';
 import {SharedModule} from './shared/shared.module';
 import {FormsModule} from '@angular/forms';
@@ -25,7 +29,9 @@ import {AddArticleModule} from './add-article/add-article.module';
     HttpClientModule,
     BrowserAnimationsModule,
     ToplistModule,
-    AddArticleModule
+    AddArticleModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [WikipediaAPIService, DatabaseApiService],
   bootstrap: [AppComponent]
