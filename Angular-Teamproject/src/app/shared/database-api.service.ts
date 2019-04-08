@@ -14,8 +14,7 @@ export class DatabaseApiService {
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
   
-  setData(title: string, article: string, url: string, rating = 0): Observable<any> {
-    const uniqueID =  Math.floor((Math.random() * 999999) + 1);
+  setData(title: string, article: string, url: string, rating: number = 0, uniqueID: number =  Math.floor((Math.random() * 999999) + 1)): Observable<any> {
     const value = encodeURI(JSON.stringify({
       title: title,
       article: article,
