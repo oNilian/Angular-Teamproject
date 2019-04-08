@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+main {
+    height: 70vh;
+}
+
 body {
   background: #6c6c6c;
   /*font-family: 'Titillium Web', sans-serif;*/
