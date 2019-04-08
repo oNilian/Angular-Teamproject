@@ -8,7 +8,7 @@
 
 .sneakyUnicorn {
     align-items: flex-start;
-    background-color: gray;
+    background-color: white;
     height: 70px;
     width: 100%;
 }
@@ -18,7 +18,7 @@
     opacity: 0.85;
     position: fixed;
     width: 100%;
-    z-index: 5;
+    color: lightgray;
 }
 
 .mainContainer {
@@ -28,5 +28,6 @@
 
 .footerContainer {
     padding: 20px;
-    background-color: #0F1028;
+    background-color: black;
+    opacity: 0.85;
 }
