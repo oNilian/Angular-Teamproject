@@ -14,8 +14,6 @@ export class TopTenComponent implements OnInit {
   }
   ngOnInit() {
     this.databaseApiService.getData().subscribe(dataHandler => {
-      console.log(dataHandler);
-      
       if (dataHandler.status === 'success') {
         dataHandler.data.forEach( (singleData: any) => {
           this.dataArray.push( JSON.parse(singleData.value) );
