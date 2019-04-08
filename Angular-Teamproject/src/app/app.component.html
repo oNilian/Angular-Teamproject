@@ -1,30 +1,39 @@
 
-<body class="wrapper">
-    <header class="headerContainer">
-        <app-header></app-header>
-    </header>
 
-<!--******************/ routed mainContent /******************-->
 
-    <main class="mainContainer">
- 
 
-      <app-aritcle-list></app-aritcle-list>
-       <app-rating-system></app-rating-system>
-       <app-add-new-article></app-add-new-article>
-          <!-- <app-aritcle-list></app-aritcle-list> -->
 
-        <app-landing-page></app-landing-page>
-    </main>
+<!--<nav class="navigationalHeader">-->
+  <!--<div class="wrapLogo">-->
+    <!--&lt;!&ndash;<img class="navLogo" src="/assets/img/rocketLogo.svg"/>&ndash;&gt;-->
+  <!--</div>-->
+  <!--<div class="wrapNavBar">-->
 
-    <!-- temp component placment for testing only - remove after routing is working -->
+      <!--<a routerLink="" class="logo">Strida AB</a>-->
+      <!--<a routerLink="toptencomponent">top</a>-->
+      <!--<a routerLink="ratinglist">rate</a>-->
+      <!--<a routerLink="stridaEVO">STRiDA EVO</a>-->
+      <!--<a routerLink="vision">VISION</a>-->
+      <!--<a routerLink="contact">CONTACT</a>-->
 
-    <app-top-ten></app-top-ten>
-    <app-aritcle-list></app-aritcle-list>
+  <!--</div>-->
+<!--</nav>-->
 
-    <!-- temp component placment for testing only - remove after routing is working -->
+<nav class="navigationalHeader">
+  <!--<div class="wrapLogo">-->
+    <!--<img class="navLogo" />-->
+  <!--</div>-->
+  <div class="wrapNavBar">
+    <a routerLink="" routerLinkActive="active" class="navHomeButton">Home</a>
+    <a routerLink="/toptencomponent" routerLinkActive="active" class="navToplistButton">Toplist</a>
+    <a routerLink="/rating" routerLinkActive="active" class="navRatingButton">Rating</a>
+    <a routerLink="/addarticle" routerLinkActive="active" class="navAddArticleButton">Add Article</a>
+    <!-- <span routerLink="" class="navAboutUsButton">About us</span> -->
+  </div>
+</nav>
 
-    <footer class="footerContainer">
-        <app-footer></app-footer>
-    </footer>
-</body>
+<router-outlet></router-outlet>
+
+<!--{path: 'toptencomponent', component: TopTenComponent},-->
+<!--{path: 'rating', component: AritcleListComponent},-->
+<!--{path: 'addarticle', component: AddNewArticleComponent},-->

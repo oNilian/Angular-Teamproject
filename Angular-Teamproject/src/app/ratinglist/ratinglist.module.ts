@@ -7,15 +7,18 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RatingSystemComponent} from './rating-system/rating-system.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {MatSliderModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [AritcleListComponent, RatingSystemComponent],
-  imports: [FormsModule, HttpClientModule, BrowserModule, BrowserAnimationsModule],
+  declarations: [AritcleListComponent, RatingSystemComponent,  ],
+  imports: [MatSliderModule, FormsModule, HttpClientModule, BrowserModule, BrowserAnimationsModule, Ng2SearchPipeModule, NgbModule],
   providers: [WikipediaAPIService],
   exports: [
-    CommonModule,
-    AritcleListComponent, RatingSystemComponent
+    AritcleListComponent, RatingSystemComponent,
   ],
+  bootstrap: [ ]
 })
 export class RatinglistModule {
 }
