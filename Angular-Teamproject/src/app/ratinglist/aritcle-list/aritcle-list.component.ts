@@ -42,8 +42,9 @@ export class AritcleListComponent implements OnInit {
     this.http.get(this.wikiURL)
       .subscribe(
         res => {
-          this.data = res.query.search;
-           console.log(res.query.search);
+          console.log('article list http get: res=', res);
+          // this.data = res.query.search;
+          //  console.log(res.query.search);
 
          }
       );
