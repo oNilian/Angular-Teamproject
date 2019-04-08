@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {Pipe, PipeTransform} from '@angular/core';
-import {SearchResult} from '../../shared/search-result';
+import {DatabaseApiService} from '../../shared/database-api.service';
 
 @Component({
   selector: 'app-aritcle-list',
@@ -10,43 +7,54 @@ import {SearchResult} from '../../shared/search-result';
   styleUrls: ['./aritcle-list.component.css']
 })
 export class AritcleListComponent implements OnInit {
-
-   // private wikiURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30&srsearch=gmail`;
-   private wikiURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30&srsearch=julian`;
-   private limit = `&limit=5`;
+  private wikiURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30&srsearch=julian`;
+  private limit = `&limit=5`;
   private format = `&format=json`;
-  data: any;
   searchText: any;
   currentRate = 0;
+  dataArray = [];
+  private baseURL: string = 'https://forverkliga.se/JavaScript/api/api-db.php?';
+  private groupID: string = '&group=1av0E'; // Used for test create new for final.
 
   sortByTitle() {
-    this.data.sort((a, b) => a.title.localeCompare(b.title));
+    this.dataArray.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   reverseSortbyTitle() {
-    this.data.sort((a, b) => b.title.localeCompare(a.title));
+    this.dataArray.sort((a, b) => b.title.localeCompare(a.title));
 
   }
 
-  SaveObjectFromRatingList() {
-    confirm('You gave this article ' + this.currentRate + ' stars. Thanks for rating and using this app!');
+
+  constructor(private databaseApiService: DatabaseApiService) {
 
   }
 
-  constructor(private http: HttpClient) {
-
+  SaveObjectFromRatingList(wiki) {
+    confirm('You gave this article ' + wiki.rating + ' stars. Thanks for rating and using this app!');
+    this.databaseApiService.setData(wiki.title, wiki.article, this.baseURL + this.groupID);
   }
 
   ngOnInit() {
-
-    this.http.get(this.wikiURL)
-      .subscribe(
-        res => {
-          this.data = res.query.search;
-           console.log(res.query.search);
-
-         }
-      );
+    /*
+        this.http.get(this.forverkligaObject)
+          .subscribe(
+            res => {
+              this.data = res.data;
+              console.log(this.data);
+            }
+          );
+          */
+    this.databaseApiService.getData().subscribe(dataHandler => {
+      if (dataHandler.status === 'success') {
+        dataHandler.data.forEach((singleData: any) => {
+          this.dataArray.push(JSON.parse(singleData.value));
+          console.log(this.dataArray);
+        });
+      } else {
+        console.log('Database API Error!');
+      }
+    });
   }
 
   // action: 'query',

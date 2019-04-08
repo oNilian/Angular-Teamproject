@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 
+.stars{
+  color: #e5be00;
+}
 body {
   background: #6c6c6c;
   /*font-family: 'Titillium Web', sans-serif;*/
