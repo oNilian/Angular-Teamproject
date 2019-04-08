@@ -4,3 +4,6 @@ body, html {
   width: 100%;
   max-width: 100%;
 }
+.headerContainer{
+  z-index: 100;
+}
