@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AboutUsService } from '../shared/about-us.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,10 @@ import { AboutUsService } from '../shared/about-us.service';
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class NavigationModule {
 }
+
