@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavigationModule} from './navigation/navigation.module';
 import {ToplistModule} from './toplist/toplist.module';
 import {AddArticleModule} from './add-article/add-article.module';
+import {AboutUsService} from './shared/about-us.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {AddArticleModule} from './add-article/add-article.module';
     ToplistModule,
     RouterModule
   ],
-  providers: [WikipediaAPIService, DatabaseApiService],
+  providers: [WikipediaAPIService, DatabaseApiService, AboutUsService],
   bootstrap: [AppComponent]
 })
 
