@@ -19,7 +19,7 @@ export class AddNewArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.wikiService.getArticle('frontend').subscribe(wiki => {
+    this.wikiService.getArticle('npm').subscribe(wiki => {
       this.titles = [];
       this.articles = [];
       this.wikiLink = [];
@@ -55,9 +55,9 @@ export class AddNewArticleComponent implements OnInit {
 
   onAddToListClick(title: string, article: string, url: string) {
 
-    if (confirm('Youre about to add the ' + title + ' article to your ratings list , would you like to proceed?') === true) {
+    if (confirm('Youre about to add the ' + title + ' article to ratings list!') === true) {
       this.databaseApiService.setData(title, article, url);
-      alert( title + ' was added to your list of articles. Go ahead and givet a rating in the ratings list!');
+      alert( title + ' was added to your list of articles in ratinglist');
     }
   }
 

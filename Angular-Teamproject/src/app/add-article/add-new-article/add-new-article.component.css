@@ -99,6 +99,7 @@ i.icon-white {
   background-color: #292929;
 }
 .btn-rating{
+  font-size: 25px;
   background-color: #292929;
   border: none;
   cursor: pointer;

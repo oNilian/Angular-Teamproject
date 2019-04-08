@@ -28,7 +28,7 @@
   </header>
 
 
-  <section class="searchResults">
+  <section class="searchResults"  *ngIf="dataArray; else defaults" >
     <div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">
 
       <h3 class="resultItem-title">
@@ -40,12 +40,15 @@
 
         <pre class="wiki-title">Rate this article: <b>{{wiki.rating}}  </b>
           <button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>
+        <button class="btn-rating" (click)="deleteThisArticle(i)">Delete this article</button>
+
 
       </h3>
 
     </div>
 
   </section>
+
 
 </main>
 

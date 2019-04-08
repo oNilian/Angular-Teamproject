@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DatabaseApiService} from '../../shared/database-api.service';
-import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-aritcle-list',
@@ -11,6 +11,7 @@ export class AritcleListComponent implements OnInit {
   private uniqueID = [];
   searchText: any;
   dataArray = [];
+  private groupID: string = '&group=rw2YB';
   private baseURL: string = 'https://forverkliga.se/JavaScript/api/api-db.php?';
 
   sortByTitle() {
@@ -23,24 +24,31 @@ export class AritcleListComponent implements OnInit {
   }
 
 
-  constructor(private databaseApiService: DatabaseApiService) {
+  constructor(private databaseApiService: DatabaseApiService, private http: HttpClient) {
+    console.log(this.dataArray);
   }
+
+  deleteThisArticle(i) {
+    this.databaseApiService.delData(this.uniqueID[i]);
+    this.dataArray.splice(i, 1);
+
+  }
+
+  // delData(i: number) {
+  //   this.http.get(this.baseURL + 'op=remove' + this.groupID + '&key=' + this.uniqueID[i]).subscribe();
+  //   this.dataArray.splice(i, 1);
+  //   console.log(this.uniqueID[i]);
+  //   console.log(this.dataArray);
+  //   return;
+  // }
 
 
   SaveObjectFromRatingList(wiki, i) {
-    // function RemoveProduct() {
-    //   if (confirm("Poista?") == true) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // }
-
-
     confirm('You gave this article ' + wiki.rating + ' stars. Thanks for rating and using this app!');
     this.databaseApiService.setData(wiki.title, wiki.article, this.baseURL, wiki.rating, this.uniqueID[i]);
 
   }
+
   // DeleteThisArticle(){
   //
   // }
@@ -52,7 +60,7 @@ export class AritcleListComponent implements OnInit {
         dataHandler.data.forEach((singleData: any) => {
           this.dataArray.push(JSON.parse(singleData.value));
           this.uniqueID.push(singleData.key);
-          console.log(singleData.key);
+
         });
       } else {
         console.log('Database API Error!');
