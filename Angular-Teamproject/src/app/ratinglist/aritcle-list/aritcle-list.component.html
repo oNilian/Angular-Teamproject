@@ -10,13 +10,6 @@
       <button type="submit" class="icon searchIcon">
         <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
       </button>
-      <!--sortByTitle() {-->
-      <!--this.data.sort((a, b) => a.title.localeCompare(b.title));-->
-      <!--}-->
-
-      <!--reverseSortbyTitle() {-->
-      <!--this.data.sort((a, b) => b.title.localeCompare(a.title));-->
-      <!--}-->
 
       <button type="submit" class="icon searchIcon" (click)="reverseSortbyTitle()">
         <!--<i class="large material-icons icon-blue">note_add</i>-->
@@ -34,20 +27,39 @@
 
   </header>
 
+
+
+
+
+  <!--<h1>Top 10 List</h1>-->
+  <!--<ul>-->
+  <!--<li *ngFor="let item of topTenList; let i = index">-->
+  <!--<h2>#{{ i+1 }} <a href="{{ topTenList[i].link }}">{{ topTenList[i].title }}</a></h2>-->
+  <!--<p>{{ topTenList[i].article }}</p>-->
+  <!--<p>-->
+  <!--{{ topTenList[i].rating }}-->
+  <!--</p>-->
+  <!--</li>-->
+  <!--</ul>-->
+
+
   <section class="searchResults">
-    <div class="resultItem" *ngFor=" let wiki of data| filter:searchText">
+    <div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">
+
       <h3 class="resultItem-title">
-        <a href="" class="wiki-title">{{wiki.title| uppercase}}</a>
+         <h5>Article number {{i+1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>
+        <h3 class="time-stamp"><span>{{wiki.article}}</span></h3>
 
-      </h3>
-      <h4><span class="word-count">This article contains {{wiki.wordcount}} words</span><br></h4>
 
-      <h3 class="time-stamp"><span>This article was updated in {{wiki.timestamp | date: "dd/MM/yyyy"}}</span></h3>
+        <ngb-rating class="wiki-title stars" [(rate)]="wiki.rating" > </ngb-rating>
 
-      <ngb-rating class="wiki-title" [(rate)]="currentRate"> </ngb-rating>
-      <pre class="wiki-title">Rate this article: <b>{{currentRate}}  </b><button class="btn-rating" (click)="SaveObjectFromRatingList()">Save my rating</button></pre>
+        <pre class="wiki-title" >Rate this article: <b>{{wiki.rating}}  </b>
+          <button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>
 
-     </div>
+     </h3>
+
+    </div>
+
   </section>
 
  </main>
