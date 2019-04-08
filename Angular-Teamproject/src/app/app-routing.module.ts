@@ -4,6 +4,7 @@ import {LandingPageComponent} from './navigation/landing-page/landing-page.compo
 import {AddNewArticleComponent} from './add-article/add-new-article/add-new-article.component';
 import {AritcleListComponent} from './ratinglist/aritcle-list/aritcle-list.component';
 import {TopTenComponent} from './toplist/top-ten/top-ten.component';
+// import {AboutUsComponent} from './navigation/about-us/AboutUsComponent';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
     {path: 'Toplist', component: TopTenComponent},
     {path: 'Rating', component: AritcleListComponent},
     {path: 'AddArticle', component: AddNewArticleComponent},
-    // {path: 'About us', component: StridaEvoComponent},
+    // {path: 'Aboutus', component: AboutUsComponent},
 ];
 
 @NgModule({
