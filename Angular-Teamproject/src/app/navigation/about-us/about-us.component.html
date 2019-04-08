@@ -1,0 +1,15 @@
+<h1>The masterminds behind this fabulous app</h1>
+<div class="aboutUsContainer">
+  <div *ngFor="let person of data">
+    <img class="albert" [src]="person.img" alt="">
+    <p>{{person.namn}}</p>
+    <div class="social">
+      <a [href]="person.git">
+        <img class="git" src="/assets/img/Git.png" />
+      </a>
+      <a [href]="person.link">
+        <img class="link" src="/assets/img/linkedin.png" />
+      </a>
+    </div>
+  </div>
+</div>
