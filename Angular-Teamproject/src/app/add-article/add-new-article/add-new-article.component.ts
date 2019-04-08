@@ -23,6 +23,9 @@ export class AddNewArticleComponent implements OnInit {
 
   searchWikipedia(q: string) {
     return this.wikiService.getArticle(q).subscribe(wiki => {
+      this.titles = [];
+      this.articles = [];
+      this.wikiLink = [];
       wiki[1].forEach(data =>{
         this.titles.push(data);
       });
