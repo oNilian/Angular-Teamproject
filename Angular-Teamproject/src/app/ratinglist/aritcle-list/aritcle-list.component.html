@@ -54,6 +54,7 @@
     <div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">
 
       <h3 class="resultItem-title">
+
         <h5>Article number {{i+1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>
         <h3 class="time-stamp"><span>{{wiki.article}}</span></h3>
 
@@ -61,9 +62,9 @@
         <ngb-rating class="wiki-title stars" [(rate)]="wiki.rating" > </ngb-rating>
 
         <pre class="wiki-title" >Rate this article: <b>{{wiki.rating}}  </b>
-          <button class="btn-rating" (click)="SaveObjectFromRatingList(wiki)">Save my rating</button></pre>
+          <button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>
 
-      </h3>
+     </h3>
      </div>
   </section>
 

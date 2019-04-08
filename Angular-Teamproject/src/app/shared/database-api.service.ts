@@ -9,17 +9,19 @@ export class DatabaseApiService {
 
   private baseURL: string = 'https://forverkliga.se/JavaScript/api/api-db.php?';
   private groupID: string = '&group=1av0E'; // Used for test create new for final.
-  private dataArray = [];
   
   getData(): Observable<any> {
     return this.http.get(this.baseURL + 'whathaveidone' + this.groupID);
   }
   
-  setData(title: string, article: string, url: string): Observable<any> {
-    const valueString = `{"title": "${title}", "article": "${article}", "link": "${url}", "rating": 0}`;
-    const uniqueID =  Math.floor((Math.random() * 999999) + 1);
-
-    this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + valueString).subscribe();
+  setData(title: string, article: string, url: string, rating: number = 0, uniqueID: number =  Math.floor((Math.random() * 999999) + 1)): Observable<any> {
+    const value = encodeURI(JSON.stringify({
+      title: title,
+      article: article,
+      link: url,
+      rating: rating
+    }));
+    this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + value).subscribe();
     return;
   }
 
