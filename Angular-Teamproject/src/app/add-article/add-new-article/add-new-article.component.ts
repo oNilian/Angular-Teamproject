@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
+import { DatabaseApiService } from '../../shared/database-api.service';
 
 @Component({
   selector: 'app-add-new-article',
@@ -7,23 +8,36 @@ import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
   styleUrls: ['./add-new-article.component.css']
 })
 export class AddNewArticleComponent implements OnInit {
+  [x: string]: any;
+  titles = [];
+  articles = [];
+  wikiLink = [];
+  newArticle: string;
 
-  titles: string;
-  articles: string;
-  wikiLink: string;
-
-  constructor(private wikiService: WikipediaAPIService) {
+  constructor(private wikiService: WikipediaAPIService, private databaseApiService: DatabaseApiService ) {
   }
 
   ngOnInit() {
+
   }
 
   searchWikipedia(q: string) {
     return this.wikiService.getArticle(q).subscribe(wiki => {
-      this.titles = wiki[1];
-      this.articles = wiki[2];
-      this.wikiLink = wiki[3];
-      console.log(this.wikiLink);
+      wiki[1].forEach(data =>{
+        this.titles.push(data);
+      });
+      wiki[2].forEach(data =>{
+        this.articles.push(data);
+      });
+      wiki[3].forEach(data =>{
+        this.wikiLink.push(data);
+      });
+
     });
-   }
+  }
+
+  onAddToListClick(title: string, article: string, url: string) {
+    this.databaseApiService.setData(title, article, url);
+  }
+
 }

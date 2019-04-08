@@ -134,3 +134,12 @@ body {
     padding: 0;
   }
 }
+.addArticle{
+  color:gray;
+}
+.addArticle:hover {
+    color: #EE6840;
+    cursor: pointer;
+    /*border: 1px solid gray;*/
+    padding: 2px;
+}

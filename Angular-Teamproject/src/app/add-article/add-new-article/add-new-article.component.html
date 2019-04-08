@@ -16,22 +16,14 @@
       </form>
     </header>
 
-    <section class="searchResults">
-      <h1><a href="{{wikiLink[0]}}"  target="_blank">{{titles[0]}}</a></h1>
-      <h3>{{articles[0]}}</h3>
+    <section class="searchResults" *ngFor="let item of titles; let i=index ">
+      <h1><a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a></h1>
+      <h3>{{articles[i]}}</h3>
+      <span class="addArticle"(click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])">Lägg till</span>
 
-      <h1><a href="{{wikiLink[1]}}"  target="_blank">{{titles[1]}}</a></h1>
-      <h3>{{articles[1]}}</h3>
-
-      <h1><a href="{{wikiLink[2]}}"  target="_blank">{{titles[2]}}</a></h1>
-      <h3>{{articles[2]}}</h3>
-
-      <h1><a href="{{wikiLink[3]}}"  target="_blank">{{titles[3]}}</a></h1>
-      <h3>{{articles[3]}}</h3>
-
-      <h1><a href="{{wikiLink[4]}}" target="_blank">{{titles[4]}}</a></h1>
-      <h3>{{articles[4]}}</h3>
     </section>
+
+
 
   </main>
 
