@@ -28,5 +28,6 @@
 
 .footerContainer {
     padding: 20px;
-    background-color: #0F1028;
+    background-color: black;
+    opacity: 0.85;
 }

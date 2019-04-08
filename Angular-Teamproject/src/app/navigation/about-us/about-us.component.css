@@ -32,11 +32,17 @@ img {
 
 .aboutUsContainer > div{
   width: 200px;
-  height: 300px;
+  /*height: 300px;*/
   margin: 30px;
-  border: 2px solid gray;
-  padding: 3px;
+  /*border: 2px solid gray;*/
+  
   box-shadow: 10px 15px 20px -6px rgba(0,0,0,0.77);
+}
+h1{
+  color: orange;
+}
+p{
+  color: black;
 }
 
 .albert{
@@ -45,13 +51,14 @@ img {
 }
 
 .social{
-  /*z-index: 3;*/
+  z-index: 4;
   position: relative;
   /*top: -0px;*/
   display: flex;
   justify-content: center;
   border-top: 1px solid gray;
   height: 51px;
+  width: 200px;
 }
 
 .link, .git{
