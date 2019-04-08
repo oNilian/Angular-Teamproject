@@ -10,13 +10,6 @@
       <button type="submit" class="icon searchIcon">
         <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
       </button>
-      <!--sortByTitle() {-->
-      <!--this.data.sort((a, b) => a.title.localeCompare(b.title));-->
-      <!--}-->
-
-      <!--reverseSortbyTitle() {-->
-      <!--this.data.sort((a, b) => b.title.localeCompare(a.title));-->
-      <!--}-->
 
       <button type="submit" class="icon searchIcon" (click)="reverseSortbyTitle()">
         <!--<i class="large material-icons icon-blue">note_add</i>-->
@@ -54,8 +47,7 @@
     <div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">
 
       <h3 class="resultItem-title">
-
-        <h5>Article number {{i+1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>
+         <h5>Article number {{i+1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>
         <h3 class="time-stamp"><span>{{wiki.article}}</span></h3>
 
 
@@ -65,7 +57,9 @@
           <button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>
 
      </h3>
-     </div>
+
+    </div>
+
   </section>
 
  </main>

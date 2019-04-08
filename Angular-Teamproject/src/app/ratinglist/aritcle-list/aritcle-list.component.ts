@@ -29,7 +29,6 @@ export class AritcleListComponent implements OnInit {
 
 
   constructor(private databaseApiService: DatabaseApiService) {
-
   }
 
   // setData(title: string, article: string, url: string, rating: number = 0, uniqueID: number =  Math.floor((Math.random() * 999999) + 1)): Observable<any> {
@@ -42,11 +41,13 @@ export class AritcleListComponent implements OnInit {
   //   this.http.get(this.baseURL + 'op=set' + this.groupID + '&key=' + uniqueID + '&value=' + value).subscribe();
   //   return;
   // }
+  //
+
   SaveObjectFromRatingList(wiki, i) {
     confirm('You gave this article ' + wiki.rating + ' stars. Thanks for rating and using this app!');
     this.databaseApiService.setData(wiki.title, wiki.article, this.baseURL, wiki.rating, this.uniqueID[i]);
-    console.log(this.uniqueID[i]);
-    console.log(wiki.title);
+    // console.log(this.uniqueID[i]);
+    // console.log(wiki.title);
   }
 
   ngOnInit() {
