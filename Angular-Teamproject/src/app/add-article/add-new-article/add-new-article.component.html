@@ -31,7 +31,10 @@
       <div class="resultItem" *ngFor="let item of titles; let i=index " >
         <h1 class="resultItem-title"><a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a></h1>
         <h3>{{articles[i]}}</h3>
-        <span class="addArticle"(click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])">Spara</span>
+        <button  type="submit" class="btn-rating" (click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])"  >
+         Spara artikeln
+        </button>
+
       </div>
     </section>
 

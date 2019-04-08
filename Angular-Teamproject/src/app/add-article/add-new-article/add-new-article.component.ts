@@ -54,7 +54,11 @@ export class AddNewArticleComponent implements OnInit {
   }
 
   onAddToListClick(title: string, article: string, url: string) {
-    this.databaseApiService.setData(title, article, url);
+
+    if (confirm('Youre about to add the ' + title + ' article to your ratings list , would you like to proceed?') === true) {
+      this.databaseApiService.setData(title, article, url);
+      alert( title + ' was added to your list of articles. Go ahead and givet a rating in the ratings list!');
+    }
   }
 
 }
