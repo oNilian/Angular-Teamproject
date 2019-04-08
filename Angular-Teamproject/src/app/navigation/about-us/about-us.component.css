@@ -1,4 +1,4 @@
-
+/*
 .backgroundImage{
   background-image: url("/assets/img/Landingpage.jpg");
   background-color: lightblue;
@@ -12,21 +12,22 @@
   z-index: -1;
 
 }
+*/
+/*
 img {
-    /* opacity: 0.25; */
-    /*display: flex;*/
+    opacity: 0.25;
+    display: flex;
     height: auto;
     max-width: 100%;
 }
+*/
 
 .aboutUsContainer{
   position: relative;
-  /*bottom: 500px;*/
   display: flex;
   justify-content: center;
-  /*flex-wrap: nowrap;*/
-  z-index: 2;
-  /*border: 1px solid orange;*/
+  border: 1px solid gray;
+/*z-index: 2;*/
 }
 
 .aboutUsContainer > div{
@@ -35,6 +36,7 @@ img {
   margin: 30px;
   border: 2px solid gray;
   padding: 3px;
+  box-shadow: 10px 15px 20px -6px rgba(0,0,0,0.77);
 }
 
 .albert{
@@ -43,13 +45,12 @@ img {
 }
 
 .social{
-  z-index: 3;
+  /*z-index: 3;*/
   position: relative;
-  top: -0px;
+  /*top: -0px;*/
   display: flex;
   justify-content: center;
   border-top: 1px solid gray;
-  /*background-color: lightgray;*/
   height: 51px;
 }
 
