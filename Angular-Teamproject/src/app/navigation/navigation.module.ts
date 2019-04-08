@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {LandingPageComponent} from './landing-page/landing-page.component';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
 
 @NgModule({
   declarations: [
     LandingPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   exports: [
     CommonModule,
@@ -17,4 +17,5 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ]
 })
-export class NavigationModule { }
+export class NavigationModule {
+}

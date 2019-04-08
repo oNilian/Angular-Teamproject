@@ -18,7 +18,7 @@ i.icon-blue {
 
 i.icon-white {
   color: white;
-}
+ }
 
 .wiki-title {
   margin-bottom: 20px;
@@ -38,7 +38,27 @@ i.icon-white {
   margin-top: 10px;
 }
 
-.searchForm-container {
+
+
+.wiki-title {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.time-stamp {
+  margin-top: 20px;
+}
+
+
+
+.wiki-logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+ .searchForm-container {
   width: 100%;
   height: 100px;
 
@@ -83,7 +103,8 @@ i.icon-white {
   justify-content: center;
   align-items: center;
   color: white;
-   }
+    }
+
 
 .icon:hover {
   background-color: #1f1f1f;
@@ -103,6 +124,8 @@ i.icon-white {
 }
 
 .resultItem {
+   background-color: #eeeeee;
+
   opacity: 0;
   margin-bottom: 20px;
   animation: show 0.5s forwards ease-in-out;
@@ -111,9 +134,12 @@ i.icon-white {
   width: 100%;
 }
 
+
 .resultItem:hover {
   background-color: #e3e3e3;
-}
+
+.resultItem:hover { background: #c9c9c9;
+ }
 
 .resultItem-title {
   margin-bottom: 4px;

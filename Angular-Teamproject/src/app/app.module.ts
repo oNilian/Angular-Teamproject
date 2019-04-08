@@ -11,12 +11,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavigationModule} from './navigation/navigation.module';
 import {ToplistModule} from './toplist/toplist.module';
 import {AddArticleModule} from './add-article/add-article.module';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
+    BrowserModule,
+    AppRoutingModule,
     AddArticleModule,
     BrowserModule,
     RatinglistModule,

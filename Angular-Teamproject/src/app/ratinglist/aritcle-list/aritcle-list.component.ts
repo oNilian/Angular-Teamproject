@@ -11,9 +11,9 @@ import {SearchResult} from '../../shared/search-result';
 })
 export class AritcleListComponent implements OnInit {
 
-  regex = ` /<span class="searchmatch">/gi`;
-  private wikiURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30&srsearch=gmail`;
-  private limit = `&limit=5`;
+   // private wikiURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30&srsearch=gmail`;
+   private wikiURL = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=30&srsearch=julian`;
+   private limit = `&limit=5`;
   private format = `&format=json`;
   data: any;
   searchText: any;
@@ -43,8 +43,9 @@ export class AritcleListComponent implements OnInit {
       .subscribe(
         res => {
           this.data = res.query.search;
-          console.log(res.query.search);
-        }
+           console.log(res.query.search);
+
+         }
       );
   }
 
