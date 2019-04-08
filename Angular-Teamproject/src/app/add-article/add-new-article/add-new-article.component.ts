@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
-import { DatabaseApiService } from '../../shared/database-api.service';
+import {DatabaseApiService} from '../../shared/database-api.service';
 
 @Component({
   selector: 'app-add-new-article',
@@ -9,30 +9,44 @@ import { DatabaseApiService } from '../../shared/database-api.service';
 })
 export class AddNewArticleComponent implements OnInit {
   [x: string]: any;
+
   titles = [];
   articles = [];
   wikiLink = [];
   newArticle: string;
 
-  constructor(private wikiService: WikipediaAPIService, private databaseApiService: DatabaseApiService ) {
+  constructor(private wikiService: WikipediaAPIService, private databaseApiService: DatabaseApiService) {
   }
 
   ngOnInit() {
-
+    this.wikiService.getArticle('frontend').subscribe(wiki => {
+      this.titles = [];
+      this.articles = [];
+      this.wikiLink = [];
+      wiki[1].forEach(data => {
+        this.titles.push(data);
+      });
+      wiki[2].forEach(data => {
+        this.articles.push(data);
+      });
+      wiki[3].forEach(data => {
+        this.wikiLink.push(data);
+      });
+    });
   }
 
-  searchWikipedia(q: string) {
+  searchWikipedia(q = 'wiki') {
     return this.wikiService.getArticle(q).subscribe(wiki => {
       this.titles = [];
       this.articles = [];
       this.wikiLink = [];
-      wiki[1].forEach(data =>{
+      wiki[1].forEach(data => {
         this.titles.push(data);
       });
-      wiki[2].forEach(data =>{
+      wiki[2].forEach(data => {
         this.articles.push(data);
       });
-      wiki[3].forEach(data =>{
+      wiki[3].forEach(data => {
         this.wikiLink.push(data);
       });
 
