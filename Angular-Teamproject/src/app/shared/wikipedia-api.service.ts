@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 export class WikipediaAPIService {
 
   private wikiURL = `https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&search=`;
-  private limit = `&limit=5`;
+  private limit = `&limit=50`;
   private format = `&format=json`;
 
   constructor(private http: HttpClient) {}

@@ -7,12 +7,12 @@ import {TopTenComponent} from './toplist/top-ten/top-ten.component';
 import { AboutUsComponent } from './navigation/about-us/about-us.component';
 
 const routes: Routes = [
-    {path: '', component: LandingPageComponent},
     {path: 'Home', component: LandingPageComponent},
     {path: 'Toplist', component: TopTenComponent},
     {path: 'Rating', component: AritcleListComponent},
     {path: 'AddArticle', component: AddNewArticleComponent},
     {path: 'AboutUs', component: AboutUsComponent},
+    {path: '', component: LandingPageComponent},
 ];
 
 @NgModule({

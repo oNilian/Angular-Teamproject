@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AddNewArticleComponent } from './add-new-article/add-new-article.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AddNewArticleComponent} from './add-new-article/add-new-article.component';
 import {WikipediaAPIService} from '../shared/wikipedia-api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-      AddNewArticleComponent
-    ],
+    AddNewArticleComponent
+  ],
   imports: [
-    CommonModule, 
-    HttpClientModule, 
+    CommonModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [WikipediaAPIService],
@@ -20,4 +20,5 @@ import {FormsModule} from '@angular/forms';
     AddNewArticleComponent
   ]
 })
-export class AddArticleModule { }
+export class AddArticleModule {
+}
