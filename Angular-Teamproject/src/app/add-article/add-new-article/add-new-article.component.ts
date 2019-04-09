@@ -20,7 +20,7 @@ export class AddNewArticleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.wikiService.getArticle('npm').subscribe(wiki => {
+    this.wikiService.getArticle('Backbone').subscribe(wiki => {
       this.titles = [];
       this.articles = [];
       this.wikiLink = [];
@@ -36,7 +36,7 @@ export class AddNewArticleComponent implements OnInit {
     });
   }
 
-  searchWikipedia(q = 'wiki') {
+  searchWikipedia(q = 'angular') {
     return this.wikiService.getArticle(q).subscribe(wiki => {
       this.titles = [];
       this.articles = [];
@@ -61,14 +61,14 @@ export class AddNewArticleComponent implements OnInit {
       alert(title + ' was added to your list of articles in ratinglist');
     }
   }
+  //
+  // deleteThisArticle(i) {
+  //   this.databaseApiService.delData(this.uniqueID[i]);
+  //   this.dataArray.splice(i, 1);
+  // }
 
-  deleteThisArticle(i) {
-    this.databaseApiService.delData(this.uniqueID[i]);
-    this.dataArray.splice(i, 1);
-  }
 
-
-  clearSearch(query) {
+  clearSearch() {
     this.titles.splice(0, 1000);
     this.articles.splice(0, 1000);
     this.wikiLink.splice(0, 1000);

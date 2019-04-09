@@ -3,10 +3,10 @@
   <header class="searchForm-container">
 
     <form class="searchForm">
-      <img class="wiki-logo" src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
+      <!--<img class="wiki-logo" src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">-->
 
       <input type="search" class="searchForm-input" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}"
-             autocomplete="off" placeholder="Sparade artiklar ...">
+             autocomplete="off" placeholder="Browse, rate and sort through your saved wikis ...">
       <!--<button type="submit" class="icon searchIcon">-->
       <!--<img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">-->
       <!--</button>-->
@@ -31,19 +31,23 @@
   <section class="searchResults"  *ngIf="dataArray; else defaults" >
     <div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">
 
-      <h3 class="resultItem-title">
-        <h5>Article number {{i + 1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>
-        <h3 class="time-stamp"><span>{{wiki.article}}</span></h3>
+      <h1  class="resultItem-title">
+        <a href="" class="wiki-title">{{wiki.title}}</a>
+      </h1>
+
+        <p class="time-stamp">{{wiki.article}}</p>
+      <p><ngb-rating class="wiki-title stars" [(rate)]="wiki.rating"></ngb-rating></p>
+
+      <pre class="shajt" >Rate this article: <b>{{wiki.rating}}</b></pre>
 
 
-        <ngb-rating class="wiki-title stars" [(rate)]="wiki.rating"></ngb-rating>
-
-        <pre class="wiki-title">Rate this article: <b>{{wiki.rating}}  </b>
-          <button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>
-        <button class="btn-rating" (click)="deleteThisArticle(i)">Delete this article</button>
 
 
-      </h3>
+          <button class="submit" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button>
+        <button class="submit" (click)="deleteThisArticle(i)">Delete this article</button>
+
+
+
 
     </div>
 

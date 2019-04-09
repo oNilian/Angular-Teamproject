@@ -23,12 +23,13 @@ img {
 */
 
 .aboutUsContainer{
+  margin-bottom: 25px;
+  margin-top: 25px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid gray;
-/*z-index: 2;*/
+ /*z-index: 2;*/
 }
 
 .aboutUsContainer > div{
@@ -40,15 +41,19 @@ img {
   box-shadow: 10px 15px 20px -6px rgba(0,0,0,0.77);
 }
 h1{
-  color: orange;
+  color: #606060;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 p{
   color: black;
 }
 
 .albert{
+  margin-top: 25px;
+  margin-bottom: 25px;
   width: 200px;
-  height: 300px;
+  height: 200px;
 }
 
 .social{
@@ -71,3 +76,4 @@ p{
   width: 52px;
   height: 52px;
 }
+

@@ -17,10 +17,21 @@ li {
 	width: 80%;
 	text-align: left;
 }
+li:hover{
+  background: #c9c9c9;
+}
 li>h2 a, li>h2 {
 	font-size: 2.5rem;
 	color: #000;
 }
 li p {
 	font-size: 1.5rem;
+}
+.stars{
+  color: #e5be00;
+  size: 80px;
+}
+.wiki-title {
+  margin-bottom: 20px;
+  font-size: 50px;
 }
