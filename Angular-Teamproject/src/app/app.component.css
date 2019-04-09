@@ -8,6 +8,7 @@
 
 .sneakyUnicorn {
     align-items: flex-start;
+    flex-shrink: 0;
     background-color: white;
     height: 70px;
     width: 100%;
