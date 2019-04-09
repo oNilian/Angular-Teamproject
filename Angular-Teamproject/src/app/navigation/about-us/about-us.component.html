@@ -1,7 +1,8 @@
-
+<h1>The masterminds behind this fabulous app</h1>
 <div class="aboutUsContainer">
   <div *ngFor="let person of data">
     <img class="albert" [src]="person.img" alt="">
+    <p>{{person.namn}}</p>
     <div class="social">
       <a [href]="person.git">
         <img class="git" src="/assets/img/Git.png" />
@@ -12,44 +13,3 @@
     </div>
   </div>
 </div>
-
-<!--
-<div class="person">
-  <img class="albert" src="/assets/img/owl.jpg" />
-  <div class="social">
-    <a href="#">
-      <img class="git" src="/assets/img/Git.png" />
-    </a>
-    <a href="https://www.linkedin.com/in/julian-als%C3%A9n-2a6194167/">
-      <img class="link" src="/assets/img/linkedin.png" />
-    </a>
-  </div>
-</div>
-
-<div class="ibrahim">
-  <img class="albert" src="/assets/img/ara.png" />
-  <div class="social">
-    <img class="git" src="/assets/img/Git.png" />
-    <img class="link" src="/assets/img/linkedin.png" />
-  </div>
-</div>
-
-<div class="viktor">
-  <img class="albert" src="/assets/img/albert.jpg" />
-  <div class="social">
-    <img class="git" src="/assets/img/Git.png" />
-    <img class="link" src="/assets/img/linkedin.png" />
-  </div>
-</div>
-
-<div class="kristina">
-  <img class="albert" src="/assets/img/monkey.png" />
-  <div class="social">
-    <img class="git" src="/assets/img/Git.png" />
-    <a href="https://www.linkedin.com/in/kristina-lomartire-818b39172">
-      <img class="link" src="/assets/img/linkedin.png" />
-    </a>
-  </div>
-</div>
-</div>
--->
