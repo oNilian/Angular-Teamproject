@@ -60,6 +60,6 @@ a {
 }
 
 .navLogo:hover {
-    transform: scale(1.35);
+    transform: scale(1.15);
     cursor: pointer;
 }
