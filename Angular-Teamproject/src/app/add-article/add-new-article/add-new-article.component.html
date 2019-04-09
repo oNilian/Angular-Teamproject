@@ -1,6 +1,11 @@
 <div class="searchForm-container">
   <form class="searchForm">
     <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Find and save articles!" [ngModelOptions]="{standalone: true}" >
+    <button type="button" class="icon clear" (click)="clearSearch(query)" >
+      <i class="material-icons icon-white">
+        cancel
+      </i>
+    </button>
     <button  type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
       <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
     </button>
