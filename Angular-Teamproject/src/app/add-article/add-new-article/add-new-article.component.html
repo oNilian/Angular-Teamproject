@@ -1,101 +1,23 @@
+<div class="searchForm-container">
+  <form class="searchForm">
+    <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Find and save articles!" [ngModelOptions]="{standalone: true}" >
+    <button type="button" class="icon clear" (click)="clearSearch(query)" >
+      <i class="material-icons icon-white">
+        cancel
+      </i>
+    </button>
+    <button  type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
+      <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
+    </button>
+  </form>
 
-
-
-<main>
-  <!--<header class="searchForm-container">-->
-
-  <!--<form class="searchForm">-->
-    <!--<img class="wiki-logo" src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">-->
-
-    <!--<input type="search" class="searchForm-input" [(ngModel)]="searchText"  [ngModelOptions]="{standalone: true}" autocomplete="off" placeholder="Sparade artiklar ...">-->
-    <!--<button type="submit" class="icon searchIcon">-->
-      <!--<img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">-->
-    <!--</button>-->
-  <!--</form>-->
-
-  <!--</header>-->
-    <header class="searchForm-container">
-      <form class="searchForm">
-        <img class="wiki-logo"  src="https://image.ibb.co/e6vOFQ/wikipedia.png" alt="Wikipedia Logo">
-
-        <input class="searchForm-input" type="search" [(ngModel)]="query" placeholder="Hitta & spara artiklar!"
-               [ngModelOptions]="{standalone: true}"
-        >
-         <button  type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
-          <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
-        </button>
-      </form>
-    </header>
-
-    <section class="searchResults" >
-      <div class="resultItem" *ngFor="let item of titles; let i=index " >
-        <h1 class="resultItem-title"><a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a></h1>
-        <h3>{{articles[i]}}</h3>
-        <button  type="submit" class="btn-rating" (click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])"  >
-         Spara artikeln
-        </button>
-
-      </div>
-    </section>
-
-
-
-  </main>
-
-<!--<section class="searchResults">-->
-  <!--<div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">-->
-
-    <!--<h3 class="resultItem-title">-->
-      <!--<h5>Article number {{i+1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>-->
-      <!--<h3 class="time-stamp"><span>{{wiki.article}}</span></h3>-->
-
-
-      <!--<ngb-rating class="wiki-title stars" [(rate)]="wiki.rating" > </ngb-rating>-->
-
-      <!--<pre class="wiki-title" >Rate this article: <b>{{wiki.rating}}  </b>-->
-          <!--<button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>-->
-
-    <!--</h3>-->
-
-  <!--</div>-->
-
-<!--</section>-->
-
-
-
-
-    <!--<h1>Top 10 List</h1>-->
-    <!--<ul>-->
-    <!--<li *ngFor="let item of topTenList; let i = index">-->
-    <!--<h2>#{{ i+1 }} <a href="{{ topTenList[i].link }}">{{ topTenList[i].title }}</a></h2>-->
-    <!--<p>{{ topTenList[i].article }}</p>-->
-    <!--<p>-->
-    <!--{{ topTenList[i].rating }}-->
-    <!--</p>-->
-    <!--</li>-->
-    <!--</ul>-->
-
-
-    <!--<section class="searchResults">-->
-      <!--<div class="resultItem" *ngFor=" let wiki of dataArray| filter:searchText; let i =index">-->
-
-        <!--<h3 class="resultItem-title">-->
-          <!--<h5>Article number {{i+1}}</h5> <a href="" class="wiki-title">{{wiki.title}}</a>-->
-          <!--<h3 class="time-stamp"><span>{{wiki.article}}</span></h3>-->
-
-
-          <!--<ngb-rating class="wiki-title stars" [(rate)]="wiki.rating" > </ngb-rating>-->
-
-          <!--<pre class="wiki-title" >Rate this article: <b>{{wiki.rating}}  </b>-->
-          <!--<button class="btn-rating" (click)="SaveObjectFromRatingList(wiki, i)">Save my rating</button></pre>-->
-
-        <!--</h3>-->
-
-      <!--</div>-->
-
-    <!--</section>-->
-
-  <!--</main>-->
-
-
-
+  <section class="resultItem" *ngFor="let item of titles; let i=index">
+      <h1 class="resultItem-title">
+        <a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a>
+      </h1>
+      <p>{{articles[i]}}</p>
+      <button  type="submit" class="submit" (click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])">
+        Spara artikeln
+      </button>
+  </section>
+</div>

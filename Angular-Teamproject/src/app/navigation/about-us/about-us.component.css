@@ -25,6 +25,7 @@ img {
 .aboutUsContainer{
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   border-top: 1px solid gray;
 }
@@ -49,7 +50,7 @@ p{
 }
 
 .social{
-  z-index: 4;
+  z-index: 4; /* why th f z-index? - viktor <3 */
   position: relative;
   display: flex;
   justify-content: center;

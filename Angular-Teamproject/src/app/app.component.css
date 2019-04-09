@@ -8,6 +8,7 @@
 
 .sneakyUnicorn {
     align-items: flex-start;
+    flex-shrink: 0;
     background-color: white;
     height: 70px;
     width: 100%;
@@ -23,10 +24,11 @@
 
 .mainContainer {
     text-align: center;
-    z-index: 2;
+    flex: 1 0 auto;
 }
 
 .footerContainer {
+    flex-shrink: 0;
     padding: 20px;
     background-color: black;
     opacity: 0.85;

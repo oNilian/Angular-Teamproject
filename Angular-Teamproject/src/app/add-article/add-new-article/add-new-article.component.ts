@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {WikipediaAPIService} from '../../shared/wikipedia-api.service';
 import {DatabaseApiService} from '../../shared/database-api.service';
+import {DOCUMENT} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-new-article',
@@ -57,8 +58,19 @@ export class AddNewArticleComponent implements OnInit {
 
     if (confirm('Youre about to add the ' + title + ' article to ratings list!') === true) {
       this.databaseApiService.setData(title, article, url);
-      alert( title + ' was added to your list of articles in ratinglist');
+      alert(title + ' was added to your list of articles in ratinglist');
     }
   }
 
+  deleteThisArticle(i) {
+    this.databaseApiService.delData(this.uniqueID[i]);
+    this.dataArray.splice(i, 1);
+  }
+
+
+  clearSearch(query) {
+    this.titles.splice(0, 1000);
+    this.articles.splice(0, 1000);
+    this.wikiLink.splice(0, 1000);
+  }
 }
