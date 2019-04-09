@@ -69,8 +69,8 @@ export class AddNewArticleComponent implements OnInit {
 
 
   clearSearch(query) {
-    this.titles.splice(0, 50);
-    this.articles.splice(0, 50);
-    this.wikiLink.splice(0, 50);
+    this.titles.splice(0, 1000);
+    this.articles.splice(0, 1000);
+    this.wikiLink.splice(0, 1000);
   }
 }
