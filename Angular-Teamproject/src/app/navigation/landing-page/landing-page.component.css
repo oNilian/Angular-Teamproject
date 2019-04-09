@@ -16,8 +16,8 @@
 .userValuesContainer {
     z-index: 1;
     position: absolute;
-    top: 85%;
-    left: 65%;
+    top: 75%;
+    left: 15%;
     display: flex;
     width: 25%;
     /* transform: translate(-50%, -50%);
@@ -27,6 +27,7 @@
 input {
     margin: 0 6px;
     border: 1px solid #ccc;
+    background-color: lightgray;
     width: 100%;
     padding: 5px 10px;
     /* border-radius: 4px; */
