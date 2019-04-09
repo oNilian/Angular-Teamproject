@@ -34,12 +34,10 @@ i.icon-white {
 
 
 
-.wiki-logo {
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
-  margin-top: 10px;
-}
+/*.wiki-logo {*/
+  /*width: 10px;*/
+  /*height: 10px;*/
+/*}*/
 
 
 
@@ -55,8 +53,8 @@ i.icon-white {
 
 
 .wiki-logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-right: 20px;
   margin-top: 10px;
 }
@@ -81,11 +79,11 @@ i.icon-white {
 .searchForm-input {
   background-color: #606060;
   border: none;
-  height: 100px;
-  width: 800px;
+  height: 60px;
+   width: 650px;
   padding: 5px 5px;
   color: white;
-  font-size: 90px;
+  font-size: 50px;
 }
 
 .icon {
@@ -93,8 +91,8 @@ i.icon-white {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border: none;
   background-color: #292929;
 }
@@ -114,8 +112,8 @@ i.icon-white {
 }
 
 .icon img {
-  width: 22px;
-  height: 22px;
+  width: 10px;
+  height: 10px;
 }
 
 .searchResults {
@@ -134,7 +132,7 @@ i.icon-white {
   animation: show 0.5s forwards ease-in-out;
   color: black;
   padding: 20px;
-  width: 100%;
+  width: 70%;
 }
 
 

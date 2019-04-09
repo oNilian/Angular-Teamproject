@@ -24,14 +24,21 @@
          <button  type="submit" class="icon searchIcon" (click)="searchWikipedia(query)">
           <img src="https://image.ibb.co/cpG8zk/search.png" alt="Magnifying Glass Icon">
         </button>
+        <button  type="submit" class="icon searchIcon" (click)="clearSearch(query)" >
+          <i class="material-icons icon-white">
+            cancel
+          </i>
+        </button>
       </form>
     </header>
+
+
 
     <section class="searchResults" >
       <div class="resultItem" *ngFor="let item of titles; let i=index " >
         <h1 class="resultItem-title"><a href="{{wikiLink[i]}}"  target="_blank">{{titles[i]}}</a></h1>
         <h3>{{articles[i]}}</h3>
-        <button  type="submit" class="btn-rating" (click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])"  >
+        <button  type="submit" class="btn-rating spara-artikel" (click)= "onAddToListClick(titles[i], articles[i], wikiLink[i])"  >
          Spara artikeln
         </button>
 
