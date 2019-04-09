@@ -5,16 +5,9 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-main {
-    height: 70vh;
-}
-
-=======
 .stars{
   color: #e5be00;
 }
->>>>>>> dev
 body {
   background: #6c6c6c;
   /*font-family: 'Titillium Web', sans-serif;*/

@@ -1,10 +1,25 @@
 
 <!--******************/ Hero Image /******************-->
 
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Congratiulations</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>You are now signed up for our weekly list of top rated articles</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
 <div class="heroImageContainer">
     <img class="heroImage" src="/assets/img/Landingpage.jpg"/>
     <div class="userValuesContainer">
         <input type="text" placeholder="e-mail">
-        <button>Sign up</button>
+        <button class="btn btn-outline-primary mb-2 mr-2" (click)="openWindowCustomClass(content)">Sign up</button>
     </div>
 </div>
