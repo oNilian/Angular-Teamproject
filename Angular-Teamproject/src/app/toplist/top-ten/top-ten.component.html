@@ -1,10 +1,10 @@
-<h1>Top 10 List</h1>
+<h1>Top 10 Wikipedia articles in the database:</h1>
 <ul>
   <li *ngFor="let item of topTenList; let i = index">
-    <h2>#{{ i+1 }} <a href="{{ topTenList[i].link }}">{{ topTenList[i].title }}</a></h2>
-    <p>{{ topTenList[i].article }}</p>
+    <h2>#{{ i+1 }} <a href="{{ topTenList[i].link }}" target="_blank">{{ topTenList[i].title }}</a></h2>
     <p>
       {{ topTenList[i].rating }}
     </p>
+    <p>{{ topTenList[i].article }}</p>
   </li>
 </ul>
