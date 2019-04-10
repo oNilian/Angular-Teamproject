@@ -6,7 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AboutUsService } from '../shared/about-us.service';
 import { RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -24,9 +24,9 @@ import { RouterModule } from '@angular/router';
 
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule    
   ]
 })
 export class NavigationModule {
 }
-
