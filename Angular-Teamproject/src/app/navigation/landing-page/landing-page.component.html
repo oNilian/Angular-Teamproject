@@ -19,7 +19,13 @@
 <div class="heroImageContainer">
     <img class="heroImage" src="/assets/img/wikipedia-logo-wiki-api.jpg"/>
     <div class="userValuesContainer">
-        <input type="text" placeholder="e-mail">
-        <button class="btn btn-outline-primary mb-2 mr-2" (click)="openWindowCustomClass(content)">Sign up</button>
+        <input type="text" placeholder="e-mail"
+        [formControl]="isEmailControl"
+        >
+
+        <button type="submit" class="btn btn-outline-primary mb-2 mr-2" [disabled]="!isEmailControl.valid" (click)="openWindowCustomClass(content)">Sign up</button>
+    </div>
+    <div class="errorMessage" *ngIf="isEmailControl.invalid && (isEmailControl.dirty || isEmailControl.touched)">
+      Please enter a valid e-mail.
     </div>
 </div>
