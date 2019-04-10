@@ -21,7 +21,7 @@
 }
 
 input {
-    margin-left: 10px;
+    /* margin-left: px; */
     border: 1px solid #ccc;
     background-color: lightgray;
     width: 100%;
@@ -84,4 +84,10 @@ margin: 0;
     position: absolute;
     top: 75%;
     left: 8%;
+}
+
+@media(max-width: 600px) {
+    .userValuesContainer {
+        display:none;
+    }
 }
