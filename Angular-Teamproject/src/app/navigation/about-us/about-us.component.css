@@ -41,21 +41,19 @@ h1{
   color: #606060;
   margin-top: 25px;
   margin-bottom: 25px;
+  text-shadow: 2px 2px 2px gray;
 }
 p{
   color: black;
 }
 
 .albert{
-  margin-top: 25px;
-  margin-bottom: 25px;
   width: 200px;
   height: 300px;
   border-radius: 3px;
 }
 
 .social{
-  z-index: 4; /* why th f z-index? - viktor <3 */
   position: relative;
   display: flex;
   justify-content: center;
